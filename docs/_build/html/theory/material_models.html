@@ -1,0 +1,667 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Material Model Catalogue &#8212; lib-ela 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=bfc0e025" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=258bad9d"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "processEscapes": true, "macros": {"bm": ["\\boldsymbol{#1}", 1], "dd": ["\\,\\mathrm d"]}}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'theory/material_models';</script>
+    <script src="../_static/js/custom.js?v=7edcf280"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Deformation Protocols" href="deformation_protocols.html" />
+    <link rel="prev" title="Hyperelasticity — Theory &amp; Derivation" href="hyperelastic_materials/hyperelastic.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs…"
+         aria-label="Search the docs…"
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../_static/logo-dark.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">lib‑ela</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user_guide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Theory Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/index.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../development/index.html">
+    Developer Guide
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs…"
+         aria-label="Search the docs…"
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/lib-ela/lib-ela" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs…"
+         aria-label="Search the docs…"
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user_guide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Theory Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/index.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../development/index.html">
+    Developer Guide
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/lib-ela/lib-ela" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="hyperelastic_materials/hyperelastic.html">Hyperelasticity — Theory &amp; Derivation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Material Model Catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deformation_protocols.html">Deformation Protocols</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Theory Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Material Model Catalogue</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="material-model-catalogue">
+<span id="material-models"></span><h1>Material Model Catalogue<a class="headerlink" href="#material-model-catalogue" title="Link to this heading">#</a></h1>
+<p>All closed-form constitutive functions available (or planned) in <strong>lib-ela</strong>.
+Use this page when selecting or fitting a model to experimental data.</p>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#hyperelastic" id="id1">Hyperelastic</a></p></li>
+<li><p><a class="reference internal" href="#viscoelastic-beta" id="id2">Viscoelastic — <em>beta</em></a></p></li>
+<li><p><a class="reference internal" href="#multiphysics-coming-soon" id="id3">Multiphysics — <em>coming soon</em></a></p></li>
+<li><p><a class="reference internal" href="#choosing-a-model" id="id4">Choosing a model</a></p></li>
+<li><p><a class="reference internal" href="#fitting-tips" id="id5">Fitting tips</a></p></li>
+<li><p><a class="reference internal" href="#external-resources" id="id6">External resources</a></p></li>
+</ul>
+</nav>
+<section id="hyperelastic">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Hyperelastic</a><a class="headerlink" href="#hyperelastic" title="Link to this heading">#</a></h2>
+<p><em>Strain–energy forms available in</em> <strong>lib-ela</strong></p>
+<div class="pst-scrollable-table-container"><table class="sd-table table">
+<colgroup>
+<col style="width: 22.0%" />
+<col style="width: 52.0%" />
+<col style="width: 26.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Model</strong></p></th>
+<th class="head"><p><strong>Energy density</strong> <span class="math notranslate nohighlight">\(W\)</span></p></th>
+<th class="head"><p><strong>Parameters</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Neo-Hookean</strong> <em>(C / NI)</em></p></td>
+<td><p><span class="math notranslate nohighlight">\(W = \frac{\mu}{2}(I_1-3)\)</span>
+<span class="math notranslate nohighlight">\(W_{\mathrm{NI}} = \frac{\mu}{2}(\bar I_1-3) + W_{\mathrm{vol}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mu\)</span>, <span class="math notranslate nohighlight">\(K\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Mooney–Rivlin</strong> <em>(C / NI)</em></p></td>
+<td><p><span class="math notranslate nohighlight">\(W = C_1(\bar I_1-3) + C_2(\bar I_2-3) + W_{\mathrm{vol}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(C_1\)</span>, <span class="math notranslate nohighlight">\(C_2\)</span>, <span class="math notranslate nohighlight">\(K\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Ogden</strong> <em>N-term</em> <em>(C / NI)</em></p></td>
+<td><p><span class="math notranslate nohighlight">\(W = \sum_{i=1}^{N} \frac{\mu_i}{\alpha_i} \left(\lambda_1^{\alpha_i} + \lambda_2^{\alpha_i} + \lambda_3^{\alpha_i} - 3\right) + W_{\mathrm{vol}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\mu_i\)</span>, <span class="math notranslate nohighlight">\(\alpha_i\)</span>, <span class="math notranslate nohighlight">\(K\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Yeoh</strong> <em>p = 3</em> <em>(C / NI)</em></p></td>
+<td><p><span class="math notranslate nohighlight">\(W = \sum_{i=1}^{3} C_i (\bar I_1-3)^i + W_{\mathrm{vol}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(C_1\)</span>, <span class="math notranslate nohighlight">\(C_2\)</span>, <span class="math notranslate nohighlight">\(C_3\)</span>, <span class="math notranslate nohighlight">\(K\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Polynomial</strong> <em>(general, C / NI)</em></p></td>
+<td><p><span class="math notranslate nohighlight">\(W = \sum_{p,q} C_{pq} (\bar I_1-3)^p (\bar I_2-3)^q + W_{\mathrm{vol}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(C_{pq}\)</span>, <span class="math notranslate nohighlight">\(K\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition-symbols-notation admonition">
+<p class="admonition-title">Symbols &amp; notation</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(I_1 = \mathrm{tr}\,\mathbf{C}\)</span>, <span class="math notranslate nohighlight">\(\bar I_k\)</span> are isochoric invariants</p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{\mathbf{C}} = J^{-2/3}\,\mathbf{C}\)</span>, <span class="math notranslate nohighlight">\(J = \det\mathbf{F}\)</span></p></li>
+<li><p>Volumetric term: <span class="math notranslate nohighlight">\(W_{\mathrm{vol}} = \frac{K}{2}(J-1)^2\)</span></p></li>
+<li><p><strong>C</strong> = compressible form (no <span class="math notranslate nohighlight">\(K\)</span>), <strong>NI</strong> = nearly-incompressible (<span class="math notranslate nohighlight">\(K \gg \mu\)</span>; typically <span class="math notranslate nohighlight">\(K \approx 100\mu\)</span>)</p></li>
+</ul>
+</div>
+</section>
+<section id="viscoelastic-beta">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Viscoelastic — <em>beta</em></a><a class="headerlink" href="#viscoelastic-beta" title="Link to this heading">#</a></h2>
+<p>These models combine a hyperelastic spring with rheological dashpots.
+The symbolic core is stable; parameter-fitting utilities are still under
+active development.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 55.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Model</strong></p></th>
+<th class="head"><p><strong>Constitutive idea</strong></p></th>
+<th class="head"><p><strong>Status</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Generalised-Maxwell (Prony-series)</p></td>
+<td><p>Instantaneous hyperelastic spring in parallel with <span class="math notranslate nohighlight">\(n\)</span> Maxwell
+elements → hereditary integral in stress</p></td>
+<td><p><em>beta</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>Standard Linear Solid (SLS)</p></td>
+<td><p>Hyperelastic spring in parallel with a spring–dashpot Maxwell branch</p></td>
+<td><p><em>beta</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="multiphysics-coming-soon">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Multiphysics — <em>coming soon</em></a><a class="headerlink" href="#multiphysics-coming-soon" title="Link to this heading">#</a></h2>
+<p>Coupled formulations that add temperature, diffusion, or electric-field
+effects to the mechanical response. Symbolic infrastructure is designed;
+numerical validation is in progress.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 55.0%" />
+<col style="width: 20.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Model</strong></p></th>
+<th class="head"><p><strong>Coupled fields</strong></p></th>
+<th class="head"><p><strong>Status</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Thermo-hyperelastic</p></td>
+<td><p>Temperature-dependent <span class="math notranslate nohighlight">\(W(T,\mathbf{C})\)</span></p></td>
+<td><p><em>coming soon</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>Electro-active elastomers</p></td>
+<td><p>Electric enthalpy <span class="math notranslate nohighlight">\(\Psi(\mathbf{C},\mathbf{E})\)</span></p></td>
+<td><p><em>coming soon</em></p></td>
+</tr>
+<tr class="row-even"><td><p>Diffusion-deformation</p></td>
+<td><p>Chemical potential and swelling strains</p></td>
+<td><p><em>coming soon</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="choosing-a-model">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Choosing a model</a><a class="headerlink" href="#choosing-a-model" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Rubbers (λ ≲ 1.5)</strong> → Mooney–Rivlin (two parameters).</p></li>
+<li><p><strong>Large strains (λ ≳ 2)</strong> → Yeoh p = 3 or Ogden 3-term.</p></li>
+<li><p><strong>Rate effects</strong> → Generalised-Maxwell (<strong>beta</strong>).</p></li>
+<li><p><strong>Actuated / smart materials</strong> → Multiphysics (coming soon).</p></li>
+</ul>
+</section>
+<section id="fitting-tips">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Fitting tips</a><a class="headerlink" href="#fitting-tips" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Start from the <strong>small-strain shear modulus</strong> <span class="math notranslate nohighlight">\(\mu = G_0\)</span>.</p></li>
+<li><p>For NI data fix <span class="math notranslate nohighlight">\(K\)</span> (e.g. <span class="math notranslate nohighlight">\(100\mu\)</span>) to reduce correlations.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">libela.fitting.hyper_elastic_fit</span></code> (trust-region core, error bars).</p></li>
+</ul>
+</section>
+<section id="external-resources">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">External resources</a><a class="headerlink" href="#external-resources" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Boyce &amp; Ogden (2020) — <em>Prog. Mater. Sci.</em> <strong>113</strong>, 100703.</p></li>
+<li><p>Gent (1996) — <em>Rubber Chem. Technol.</em> <strong>69</strong>, 59–61.</p></li>
+</ul>
+<p>—</p>
+<p>† <em>Nearly-incompressible</em> versions use a volumetric–isochoric split and are
+enabled automatically by mixing in
+<code class="xref py py-class docutils literal notranslate"><span class="pre">libela.hyperelastic.NearlyIncompressibleMixin</span></code>.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="hyperelastic_materials/hyperelastic.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Hyperelasticity — Theory &amp; Derivation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="deformation_protocols.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Deformation Protocols</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Arya Amiri, Mohamed Hassan, &amp; contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

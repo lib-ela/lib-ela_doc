@@ -1,0 +1,29 @@
+# ──────────────────────────────────────────────
+# Build-time dependencies for *documentation only*
+# Pin or bump versions as needed; nothing here is
+# required to *run* lib-ela, only to build the docs.
+# ──────────────────────────────────────────────
+
+# Sphinx core
+sphinx>=7.2,<8.0          # documentation engine
+pydata-sphinx-theme>=0.16 # SciPy-style HTML theme (Bootstrap 5)
+sphinx-design>=0.5        # “cards”, grids, badges used in landing pages
+
+# Nice-to-have Sphinx extensions
+sphinx-autodoc-typehints>=1.24  # renders PEP-484 hints in the API docs
+sphinx-copybutton>=0.5          # adds a copy-to-clipboard button to code blocks
+myst-parser>=2.0                # CommonMark/Markdown support with maths
+nbsphinx>=0.9                   # Jupyter notebook integration (tutorials)
+
+# Notebook stack (required by nbsphinx even if execution is disabled)
+ipython>=8.10
+ipykernel>=6.25
+jupyter-client>=8.6
+nbconvert>=7.16
+
+# Optional – syntax-highlight demo blocks & inline plots
+Pygments>=2.17
+matplotlib>=3.8
+
+# Keep the build reproducible
+packaging>=24.0

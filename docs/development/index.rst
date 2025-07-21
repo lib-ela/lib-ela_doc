@@ -1,0 +1,62 @@
+.. _developer_guide:
+
+Developer Guide
+===============
+
+Welcome! This part of the documentation is for anyone who
+wants to **contribute code, report bugs, write documentation, or help shape
+lib-ela's future**. Everything you need to get started lives here.
+
+.. toctree::
+   :maxdepth: 2
+   :titlesonly:
+   :hidden:
+
+   contributing
+   citing
+   roadmap
+
+Contributing
+------------
+
+Set‑up instructions, branching model, test suite, and tips for a smooth first
+pull‑request.
+
+**→ Start contributing:** :doc:`contributing`
+
+Citing *lib‑ela*
+----------------
+
+How to reference the library in academic articles or industry white‑papers.
+Includes BibTeX entry and DOI.
+
+**→ Citation guide:** :doc:`citing`
+
+Roadmap
+-------
+
+Planned milestones, major features in flight, and the voting process for new
+ideas & RFCs.
+
+**→ View roadmap:** :doc:`roadmap`
+
+Getting involved
+----------------
+
+Whether you found a typo or you’re planning a brand‑new module, you are more
+than welcome to join the project. **First‑timers** should read
+:doc:`contributing`, then pick one of the *good first issue* labels in the
+`GitHub tracker <https://github.com/lib-ela/lib-ela/issues>`_.
+
+Useful links
+~~~~~~~~~~~~
+
+* **Issue tracker** — https://github.com/lib-ela/lib-ela/issues
+* **Discussions board** — https://github.com/lib-ela/lib-ela/discussions
+* **Continuous integration** — GitHub Actions badge in the README
+* **Package index** — https://pypi.org/project/lib-ela/
+
+.. hint::
+
+   All pages listed above live in this *development* section and are collected
+   in the hidden toctree above. Feel free to open a PR that edits any of them!

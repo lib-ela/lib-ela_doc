@@ -1,0 +1,8 @@
+<map id="inheritance4f79cf5cae" name="inheritance4f79cf5cae">
+<area shape="rect" id="node1" href="hyperelastic/libela.hyperelastic.klosnersegal.html#libela.hyperelastic.hyperelastic.klosnersegal" target="_top" title="Four&#45;term Klosner–Segal model." alt="" coords="273,5,515,32"/>
+<area shape="rect" id="node2" href="operations/libela.operations.html#libela.hyperelastic.operations.operations" target="_top" title="Mix&#45;in that turns a strain&#45;energy function into stress predictors / fitters." alt="" coords="5,107,225,133"/>
+<area shape="rect" id="node3" href="hyperelastic/libela.hyperelastic.mooneyrivlin.html#libela.hyperelastic.hyperelastic.mooneyrivlin" target="_top" title="Two&#45;parameter Mooney–Rivlin model :math:`W = C_{10}(I_1&#45;3)+C_{01}(I_2&#45;3)`." alt="" coords="273,56,515,83"/>
+<area shape="rect" id="node4" href="hyperelastic/libela.hyperelastic.neohookean.html#libela.hyperelastic.hyperelastic.neohookean" target="_top" title="Compressible / Incompressible Neo&#45;Hookean strain&#45;energy function." alt="" coords="274,107,514,133"/>
+<area shape="rect" id="node5" href="hyperelastic/libela.hyperelastic.polynomial.html#libela.hyperelastic.hyperelastic.polynomial" target="_top" title="Nine&#45;term polynomial hyperelastic model." alt="" coords="278,157,510,184"/>
+<area shape="rect" id="node6" href="hyperelastic/libela.hyperelastic.yeoh.html#libela.hyperelastic.hyperelastic.yeoh" target="_top" title="Yeoh three&#45;term model (strictly **I₁** based)." alt="" coords="295,208,492,235"/>
+</map>

@@ -1,0 +1,903 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>libela.hyperelastic.operations &#8212; lib-ela 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=bfc0e025" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=258bad9d"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/libela/hyperelastic/operations';</script>
+    <script src="../../../_static/js/custom.js?v=7edcf280"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs…"
+         aria-label="Search the docs…"
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../../_static/logo-dark.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">lib‑ela</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../theory/tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../theory/index.html">
+    Theory Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../api/index.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../development/index.html">
+    Developer Guide
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs…"
+         aria-label="Search the docs…"
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/lib-ela/lib-ela" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs…"
+         aria-label="Search the docs…"
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../user_guide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../theory/tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../theory/index.html">
+    Theory Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../api/index.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../development/index.html">
+    Developer Guide
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/lib-ela/lib-ela" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">libela.hyperelastic.operations</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for libela.hyperelastic.operations</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">operations.py</span>
+<span class="sd">=============</span>
+
+<span class="sd">Symbolic stress utilities built on SymPy + NumPy.</span>
+
+<span class="sd">A material model class (e.g. :class:`~libela.hyperelastic.hyperelastic.neohookean`) should inherit from</span>
+<span class="sd">:class:`operations` and override :meth:`energy` to supply its strain-energy</span>
+<span class="sd">function *W(I₁, I₂, J,…)*.  The mix-in then provides:</span>
+
+<span class="sd">* :py:meth:`operations.stress` - convert principal stretches → stress array</span>
+<span class="sd">* deformation-gradient builders for common test protocols</span>
+<span class="sd">* tiny numerical plotting helper</span>
+
+<span class="sd">.. note::</span>
+<span class="sd">   See :doc:`/theory/material_models` for mathematical background and :doc:`/user_guide/hyperelastic/overview` for usage examples.</span>
+
+<span class="sd">Dependencies</span>
+<span class="sd">------------</span>
+<span class="sd">* sympy &gt;= 1.12</span>
+<span class="sd">* numpy &gt;= 1.24</span>
+<span class="sd">* matplotlib (for optional plotting)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="c1"># Define the symbols for invariants to share across all materials.</span>
+<span class="p">(</span><span class="n">I1_sym</span><span class="p">,</span> <span class="n">I2_sym</span><span class="p">,</span> <span class="n">J_sym</span><span class="p">)</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;I1 I2 J&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="operations">
+<a class="viewcode-back" href="../../../api/operations/libela.operations.html#libela.hyperelastic.operations.operations">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">operations</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Mix-in for symbolic stress and fitting utilities.</span>
+
+<span class="sd">    Subclasses must implement an `energy` method that returns a symbolic</span>
+<span class="sd">    expression in terms of the invariants I1, I2 (and optionally J),</span>
+<span class="sd">    and must define a `param_symbols_list` attribute in their __init__.</span>
+
+<span class="sd">    Provides</span>
+<span class="sd">    --------</span>
+<span class="sd">    stress : Compute stress response for a given loading protocol.</span>
+<span class="sd">    fit : Parameter fitting (placeholder).</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; class MyModel(operations):</span>
+<span class="sd">    ...     def __init__(self):</span>
+<span class="sd">    ...         self.param_symbols_list = [...]</span>
+<span class="sd">    ...     def energy(self):</span>
+<span class="sd">    ...         return ...</span>
+<span class="sd">    &gt;&gt;&gt; model = MyModel()</span>
+<span class="sd">    &gt;&gt;&gt; sigma = model.stress(strain, params)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">param_symbols_list</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="viewcode-block" id="operations.stress">
+<a class="viewcode-back" href="../../../api/operations/libela.operations.html#libela.hyperelastic.operations.operations.stress">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">stress</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> 
+               <span class="n">strain</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">|</span> <span class="nb">float</span><span class="p">,</span> 
+               <span class="n">params</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span>  
+               <span class="o">*</span><span class="p">,</span>
+               <span class="n">protocol</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> 
+               <span class="n">stress_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> 
+               <span class="n">strain_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+               <span class="n">plot</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute stress response for a given loading protocol.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        strain : array_like or float</span>
+<span class="sd">            Principal stretch (uniaxial/shear) or array for biaxial tests.</span>
+<span class="sd">        params : list of float</span>
+<span class="sd">            Material parameters in the same order as the symbols in `energy`.</span>
+<span class="sd">        protocol : {&#39;uniaxial&#39;, &#39;simple_shear&#39;, &#39;biaxial&#39;}, optional</span>
+<span class="sd">            Deformation protocol to use. Default is &#39;uniaxial&#39;.</span>
+<span class="sd">        stress_type : {&#39;cauchy&#39;, &#39;piola&#39;, &#39;2nd-piola&#39;}, optional</span>
+<span class="sd">            Stress measure to return. Default is &#39;cauchy&#39;.</span>
+<span class="sd">        strain_type : {&#39;stretch&#39;, &#39;engineering&#39;}, optional</span>
+<span class="sd">            Input strain type. Default is &#39;stretch&#39;.</span>
+<span class="sd">        plot : bool, optional</span>
+<span class="sd">            If True, show a quick Matplotlib plot.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        np.ndarray or tuple of np.ndarray</span>
+<span class="sd">            Stress values for the specified protocol.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">compressible_flag</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;compressible&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">compressible_flag</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">params</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Compressible model needs [K, MU] parameters.&quot;</span><span class="p">)</span>
+        
+        <span class="n">model_param_syms</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">param_symbols_list</span>
+        
+        <span class="n">strain</span> <span class="o">=</span> <span class="n">strain_converter</span><span class="p">(</span><span class="n">strain</span><span class="p">,</span> <span class="n">strain_type</span> <span class="ow">or</span> <span class="s2">&quot;stretch&quot;</span><span class="p">)</span>
+        <span class="n">stress_type</span> <span class="o">=</span> <span class="n">stress_type</span> <span class="ow">or</span> <span class="s1">&#39;cauchy&#39;</span>
+        <span class="n">strain_type</span> <span class="o">=</span> <span class="n">strain_type</span> <span class="ow">or</span> <span class="s1">&#39;stretch&#39;</span>
+        <span class="n">protocol</span> <span class="o">=</span> <span class="n">protocol</span> <span class="ow">or</span> <span class="s1">&#39;uniaxial&#39;</span>
+        
+        <span class="c1">#deformation gradient &amp; tensors</span>
+        <span class="n">F</span> <span class="o">=</span> <span class="n">deformation_gradient_matrix</span><span class="p">(</span><span class="n">protocol</span><span class="p">,</span> <span class="n">compressible</span><span class="o">=</span><span class="n">compressible_flag</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">F</span> <span class="o">=</span> <span class="n">F</span>
+        <span class="n">J_expr</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">det</span><span class="p">()</span>  <span class="c1"># symbolic determinant of F</span>
+        
+        <span class="c1"># Invariant symbols</span>
+        <span class="n">P</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;P&#39;</span><span class="p">)</span>
+        
+        <span class="c1">#Invariants from F</span>
+        <span class="n">F_inverse</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span>
+        <span class="n">F_inverse_transpose</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">F_inverse</span><span class="p">)</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">F</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
+        <span class="n">b_inverse</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span>
+        <span class="n">b2</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">b</span> 
+        
+        <span class="n">I1</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">trace</span><span class="p">()</span>
+        <span class="n">I2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">trace</span><span class="p">()</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="n">b2</span><span class="o">.</span><span class="n">trace</span><span class="p">())</span>
+        
+        <span class="c1"># Strain-energy expression </span>
+        <span class="n">energy_expr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">energy</span><span class="p">()</span> <span class="c1"># call energy function without passing J_sym.</span>
+        
+        <span class="c1">#First derivatives, *then* substitute I1, I2, J</span>
+        <span class="n">invariant_subs</span> <span class="o">=</span> <span class="p">{</span><span class="n">I1_sym</span><span class="p">:</span> <span class="n">I1</span><span class="p">,</span> <span class="n">I2_sym</span><span class="p">:</span> <span class="n">I2</span><span class="p">,</span> <span class="n">J_sym</span><span class="p">:</span> <span class="n">J_expr</span><span class="p">}</span>
+        <span class="n">diff1_W</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">energy_expr</span><span class="p">,</span> <span class="n">I1_sym</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">invariant_subs</span><span class="p">)</span>
+        <span class="n">diff2_W</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">energy_expr</span><span class="p">,</span> <span class="n">I2_sym</span><span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">invariant_subs</span><span class="p">)</span>
+        
+        <span class="c1">#Isochoric part</span>
+        <span class="n">sigma_expression</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">diff1_W</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">diff2_W</span> <span class="o">*</span> <span class="n">b_inverse</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">compressible_flag</span><span class="p">:</span>
+            <span class="n">dW_dJ</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">energy_expr</span><span class="p">,</span> <span class="n">J_sym</span> <span class="p">)</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">invariant_subs</span><span class="p">)</span>
+            <span class="n">sigma_expression</span> <span class="o">+=</span> <span class="n">J_expr</span> <span class="o">*</span> <span class="n">dW_dJ</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># volumetric part</span>
+        
+        <span class="c1"># add Lagrange multiplier for incompressible model</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sigma_expression</span> <span class="o">-=</span> <span class="n">P</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># incompressible part</span>
+        
+        <span class="c1">#choose stress measure</span>
+        
+        <span class="k">if</span> <span class="n">stress_type</span> <span class="o">==</span> <span class="s1">&#39;piola&#39;</span><span class="p">:</span>
+            <span class="n">sigma_cauchy_incompressible</span> <span class="o">=</span> <span class="n">sigma_expression</span> <span class="o">-</span> <span class="n">P</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+            <span class="n">sigma_piola_incompressible</span> <span class="o">=</span> <span class="n">sigma_cauchy_incompressible</span> <span class="o">*</span> <span class="n">F_inverse_transpose</span>
+            <span class="n">sigma_tensor</span> <span class="o">=</span> <span class="n">sigma_piola_incompressible</span>
+        <span class="k">elif</span> <span class="n">stress_type</span> <span class="o">==</span> <span class="s1">&#39;2nd-piola&#39;</span><span class="p">:</span>
+            <span class="n">sigma_cauchy_incompressible</span> <span class="o">=</span> <span class="n">sigma_expression</span> <span class="o">-</span> <span class="n">P</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+            <span class="n">sigma_piola_incompressible</span> <span class="o">=</span> <span class="n">sigma_cauchy_incompressible</span> <span class="o">*</span> <span class="n">F_inverse_transpose</span>
+            <span class="n">sigma_2nd_piola_incompressible</span> <span class="o">=</span> <span class="n">F_inverse</span> <span class="o">*</span> <span class="n">sigma_piola_incompressible</span>
+            <span class="n">sigma_tensor</span> <span class="o">=</span> <span class="n">sigma_2nd_piola_incompressible</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sigma_tensor</span> <span class="o">=</span> <span class="n">sigma_expression</span>
+        
+        <span class="c1">#protocol specific stress solver</span>
+            
+        <span class="k">if</span> <span class="n">protocol</span> <span class="o">==</span> <span class="s1">&#39;uniaxial&#39;</span><span class="p">:</span>
+            <span class="n">stress_component_expr</span> <span class="o">=</span> <span class="n">sigma_tensor</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># Uniaxial stress component</span>
+            <span class="n">lam_s</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;lamda&#39;</span><span class="p">)</span>
+            
+            <span class="k">if</span> <span class="n">compressible_flag</span><span class="p">:</span>
+                <span class="n">lambdify_args</span> <span class="o">=</span> <span class="p">[</span><span class="n">lam_s</span><span class="p">]</span> <span class="o">+</span> <span class="n">model_param_syms</span>
+                <span class="n">stress_fn</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">lambdify_args</span><span class="p">,</span> <span class="n">stress_component_expr</span><span class="p">,</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
+            
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">stress_fn</span> <span class="o">=</span> <span class="n">uniaxial_solver</span><span class="p">(</span><span class="n">sigma_tensor</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">model_param_syms</span><span class="p">)</span>
+            
+            <span class="n">stress_values</span> <span class="o">=</span> <span class="n">stress_fn</span><span class="p">(</span><span class="n">strain</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">)</span>
+
+        <span class="k">elif</span> <span class="n">protocol</span> <span class="o">==</span> <span class="s1">&#39;simple_shear&#39;</span><span class="p">:</span>
+            <span class="n">stress_12_function</span> <span class="o">=</span> <span class="n">simple_shear_solver</span><span class="p">(</span><span class="n">sigma_tensor</span><span class="p">)</span>
+            <span class="n">stress_values</span> <span class="o">=</span> <span class="n">stress_12_function</span><span class="p">(</span><span class="n">strain</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">)</span>
+            <span class="c1">#return stress_12_function(strain, *params)</span>
+
+        <span class="k">elif</span> <span class="n">protocol</span> <span class="o">==</span> <span class="s1">&#39;biaxial&#39;</span><span class="p">:</span>
+            <span class="n">stress_11_function</span><span class="p">,</span> <span class="n">stress_22_function</span> <span class="o">=</span> <span class="n">biaxial_solver</span><span class="p">(</span><span class="n">sigma_tensor</span><span class="p">)</span>
+            <span class="n">stress_11_values</span> <span class="o">=</span> <span class="n">stress_11_function</span><span class="p">(</span><span class="n">strain</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">strain</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="o">*</span><span class="n">params</span><span class="p">)</span>
+            <span class="n">stress_22_values</span> <span class="o">=</span> <span class="n">stress_22_function</span><span class="p">(</span><span class="n">strain</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">strain</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="o">*</span><span class="n">params</span><span class="p">)</span>
+            <span class="n">stress_values</span> <span class="o">=</span> <span class="p">(</span><span class="n">stress_11_values</span><span class="p">,</span> <span class="n">stress_22_values</span><span class="p">)</span>
+            <span class="c1">#return (stress_11_function(strain[0, :], strain[1, :], *params), stress_22_function(strain[0, :], strain[1, :], *params))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown protocol: </span><span class="si">{</span><span class="n">protocol</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="n">model_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span>
+        
+        <span class="k">if</span> <span class="n">plot</span><span class="p">:</span>
+            <span class="n">_plot_stress_strain</span><span class="p">(</span><span class="n">strain</span><span class="p">,</span> <span class="n">stress_values</span><span class="p">,</span> 
+                        <span class="n">protocol</span><span class="p">,</span> 
+                        <span class="n">stress_type</span><span class="p">,</span>  
+                        <span class="n">strain_type</span> <span class="ow">or</span> <span class="s2">&quot;stretch&quot;</span><span class="p">,</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+            
+        <span class="k">return</span> <span class="n">stress_values</span></div>
+
+    
+<div class="viewcode-block" id="operations.fit">
+<a class="viewcode-back" href="../../../api/operations/libela.operations.html#libela.hyperelastic.operations.operations.fit">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Placeholder for parameter-fitting routine.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        sympy.Expr</span>
+<span class="sd">            Example symbolic derivative.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span></div>
+</div>
+
+
+<span class="c1"># --------------------------------------------------------------------------</span>
+<span class="c1"># helper functions </span>
+<span class="c1"># --------------------------------------------------------------------------</span>
+
+<div class="viewcode-block" id="strain_converter">
+<a class="viewcode-back" href="../../../api/operations/libela.operations.html#libela.hyperelastic.operations.strain_converter">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">strain_converter</span><span class="p">(</span><span class="n">strain</span><span class="p">,</span> <span class="n">strain_type</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert input strain into principal stretches (λ) based on the specified strain type.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    strain : array_like or float</span>
+<span class="sd">        The input strain array. Can be engineering strain (ε) or direct stretch (λ).</span>
+<span class="sd">    strain_type : {&#39;engineering&#39;, &#39;stretch&#39;}</span>
+<span class="sd">        Type of input strain:</span>
+<span class="sd">        - &#39;engineering&#39;: Interprets input as ε, returns λ = 1 + ε.</span>
+<span class="sd">        - &#39;stretch&#39;: Returns the input as-is.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np.ndarray</span>
+<span class="sd">        Normalized array of stretches λ.</span>
+
+<span class="sd">    Raises</span>
+<span class="sd">    ------</span>
+<span class="sd">    ValueError</span>
+<span class="sd">        If an invalid strain type is provided.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">strain</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">strain</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">strain_type</span> <span class="o">==</span> <span class="s1">&#39;engineering&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">strain</span>
+    <span class="k">elif</span> <span class="n">strain_type</span> <span class="o">==</span> <span class="s1">&#39;stretch&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">strain</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid strain type. Use &#39;engineering&#39; or &#39;stretch&#39;&quot;</span><span class="p">)</span></div>
+
+    
+<div class="viewcode-block" id="deformation_gradient_matrix">
+<a class="viewcode-back" href="../../../api/operations/libela.operations.html#libela.hyperelastic.operations.deformation_gradient_matrix">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">deformation_gradient_matrix</span><span class="p">(</span><span class="n">protocol</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;uniaxial&#39;</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">compressible</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the symbolic deformation gradient tensor F for a given loading protocol.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    protocol : {&#39;uniaxial&#39;, &#39;simple_shear&#39;, &#39;biaxial&#39;}</span>
+<span class="sd">        Type of deformation protocol.</span>
+<span class="sd">    compressible : bool, optional</span>
+<span class="sd">        If True, no lateral contraction is enforced (J ≠ 1 in uniaxial).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    sympy.Matrix</span>
+<span class="sd">        A 3x3 symbolic deformation gradient matrix F.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; F = deformation_gradient_matrix(&#39;uniaxial&#39;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">lamda</span><span class="p">,</span> <span class="n">lamda1</span><span class="p">,</span> <span class="n">lamda2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;lamda lamda1 lamda2&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">protocol</span> <span class="o">==</span> <span class="s1">&#39;uniaxial&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">compressible</span><span class="p">:</span> <span class="c1">#if specified as compressible, no lateral contraction is enforced</span>
+            <span class="k">return</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="n">lamda</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+        <span class="k">return</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="n">lamda</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">lamda</span><span class="p">),</span> <span class="mi">0</span><span class="p">],</span>
+                          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">lamda</span><span class="p">)]])</span>
+    <span class="k">elif</span> <span class="n">protocol</span> <span class="o">==</span> <span class="s1">&#39;simple_shear&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="n">lamda</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+    <span class="k">elif</span> <span class="n">protocol</span> <span class="o">==</span> <span class="s1">&#39;biaxial&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">compressible</span><span class="p">:</span> <span class="c1">#added compressibility flag for biaxial protocol</span>
+            <span class="k">return</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="n">lamda1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">lamda2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+        <span class="k">return</span> <span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">([[</span><span class="n">lamda1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">lamda2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">lamda1</span><span class="o">*</span><span class="n">lamda2</span><span class="p">)]])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown protocol: </span><span class="si">{</span><span class="n">protocol</span><span class="si">}</span><span class="s2">. Supported protocols are &#39;uniaxial&#39;, &#39;simple_shear&#39;, &#39;biaxial&#39;.&quot;</span><span class="p">)</span></div>
+
+
+<span class="c1"># ---- protocol-specific solvers ---------------------------</span>
+<div class="viewcode-block" id="uniaxial_solver">
+<a class="viewcode-back" href="../../../api/operations/libela.operations.html#libela.hyperelastic.operations.uniaxial_solver">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">uniaxial_solver</span><span class="p">(</span><span class="n">sigma_tensor</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">model_param_symbols</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate a function to solve for uniaxial stress given a symbolic stress tensor.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    sigma_tensor : sympy.Matrix</span>
+<span class="sd">        Symbolic stress tensor.</span>
+<span class="sd">    P : sympy.Symbol</span>
+<span class="sd">        Lagrange multiplier for incompressibility.</span>
+<span class="sd">    model_param_symbols : list</span>
+<span class="sd">        List of model parameter symbols.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    function</span>
+<span class="sd">        Function that computes uniaxial stress for given stretches and parameters.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1">#P = sp.symbols(&#39;P&#39;)</span>
+    <span class="n">Eq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">sigma_tensor</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># Enforcing component 22 of stress = 0</span>
+    <span class="n">P_val</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">Eq</span><span class="p">,</span> <span class="n">P</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># Solving the symbolic expression for P </span>
+    <span class="n">P_sub_val</span> <span class="o">=</span> <span class="n">P_val</span>
+    
+    <span class="n">stress_tensor</span> <span class="o">=</span> <span class="n">sigma_tensor</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">P_sub_val</span><span class="p">)</span> <span class="c1"># Substituting the expression of P into the component 11 of stress</span>
+    
+    <span class="n">lam_s</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;lamda&#39;</span><span class="p">)</span>
+    <span class="n">lambdify_args</span> <span class="o">=</span> <span class="p">[</span><span class="n">lam_s</span><span class="p">]</span> <span class="o">+</span> <span class="n">model_param_symbols</span>
+    <span class="k">return</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">lambdify_args</span><span class="p">,</span> <span class="n">stress_tensor</span><span class="p">,</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="simple_shear_solver">
+<a class="viewcode-back" href="../../../api/operations/libela.operations.html#libela.hyperelastic.operations.simple_shear_solver">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">simple_shear_solver</span><span class="p">(</span><span class="n">sigma_tensor</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate a function to solve for simple shear stress given a symbolic stress tensor.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    sigma_tensor : sympy.Matrix</span>
+<span class="sd">        Symbolic stress tensor.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    function</span>
+<span class="sd">        Function that computes shear stress for given strains and parameters.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">stress_tensor</span> <span class="o">=</span> <span class="n">sigma_tensor</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># Shear stress component</span>
+    <span class="n">symbols</span> <span class="o">=</span> <span class="nb">sorted</span> <span class="p">(</span>
+        <span class="n">stress_tensor</span><span class="o">.</span><span class="n">free_symbols</span><span class="p">,</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="s1">&#39;lamda&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="p">)</span> <span class="c1"># This is used to make sure that input parameters are sorted and also lamda comes in the first place</span>
+    <span class="k">return</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">symbols</span><span class="p">,</span> <span class="n">stress_tensor</span><span class="p">,</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="biaxial_solver">
+<a class="viewcode-back" href="../../../api/operations/libela.operations.html#libela.hyperelastic.operations.biaxial_solver">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">biaxial_solver</span><span class="p">(</span><span class="n">sigma_tensor</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate functions to solve for biaxial stress components given a symbolic stress tensor.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    sigma_tensor : sympy.Matrix</span>
+<span class="sd">        Symbolic stress tensor.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    tuple of functions</span>
+<span class="sd">        Functions that compute σ₁₁ and σ₂₂ for given stretches and parameters.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">P</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;P&#39;</span><span class="p">)</span>
+    <span class="n">Eq</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">sigma_tensor</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># Enforcing out-of-plane stress = 0</span>
+    <span class="n">P_val</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">Eq</span><span class="p">,</span> <span class="n">P</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">stress_1</span> <span class="o">=</span> <span class="n">sigma_tensor</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">P_val</span><span class="p">)</span>
+    <span class="n">stress_2</span> <span class="o">=</span> <span class="n">sigma_tensor</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">subs</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">P_val</span><span class="p">)</span>
+    <span class="n">symbols1</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+        <span class="n">stress_1</span><span class="o">.</span><span class="n">free_symbols</span><span class="p">,</span> 
+        <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;lamda1&#39;</span><span class="p">,</span> <span class="s1">&#39;lamda2&#39;</span><span class="p">],</span> <span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="p">)</span> <span class="c1"># This is used to make sure that input parameters are sorted and also lamda1 and lamda2 comes in the first place</span>
+    <span class="n">symbols2</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
+        <span class="n">stress_2</span><span class="o">.</span><span class="n">free_symbols</span><span class="p">,</span> 
+        <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;lamda1&#39;</span><span class="p">,</span> <span class="s1">&#39;lamda2&#39;</span><span class="p">],</span> <span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="p">)</span> <span class="c1"># This is used to make sure that input parameters are sorted and also lamda1 and lamda2 comes in the first place</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">symbols1</span><span class="p">,</span> <span class="n">stress_1</span><span class="p">,</span> <span class="s1">&#39;numpy&#39;</span><span class="p">),</span>
+        <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">symbols2</span><span class="p">,</span> <span class="n">stress_2</span><span class="p">,</span> <span class="s1">&#39;numpy&#39;</span><span class="p">)</span>        
+    <span class="p">)</span></div>
+
+
+<span class="c1"># ---- plotting helper ------------------------------------------------------</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_plot_stress_strain</span><span class="p">(</span><span class="n">strain</span><span class="p">,</span> <span class="n">stress_values</span><span class="p">,</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">stress_type</span><span class="p">,</span> <span class="n">strain_type</span><span class="p">,</span> <span class="n">model_name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plot stress-strain response for a given protocol and model.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    strain : array_like</span>
+<span class="sd">        Input strain values.</span>
+<span class="sd">    stress_values : array_like</span>
+<span class="sd">        Computed stress values.</span>
+<span class="sd">    protocol : str</span>
+<span class="sd">        Deformation protocol used.</span>
+<span class="sd">    stress_type : str</span>
+<span class="sd">        Type of stress measure.</span>
+<span class="sd">    strain_type : str</span>
+<span class="sd">        Type of strain measure.</span>
+<span class="sd">    model_name : str</span>
+<span class="sd">        Name of the material model.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+  
+    
+    <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">protocol</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;uniaxial&quot;</span><span class="p">,</span> <span class="s2">&quot;shear&quot;</span><span class="p">]:</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">strain</span><span class="p">,</span> <span class="n">stress_values</span><span class="p">,</span> <span class="s1">&#39;o-&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;stress&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">strain</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:],</span> <span class="n">stress_values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;o-&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;stress 11&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">strain</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="n">stress_values</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;s-&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;stress 22&#39;</span><span class="p">)</span>
+        
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">strain_type</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">stress_type</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">model_name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">protocol</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+          
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Arya Amiri, Mohamed Hassan, &amp; contributors.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

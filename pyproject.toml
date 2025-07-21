@@ -1,0 +1,8 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "libela"
+version = "0.1.0"
+dependencies = ["numpy", "sympy"]      # add real runtime deps here

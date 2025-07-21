@@ -1,0 +1,25 @@
+# docs/requirements.txt  ───────────────
+# Core scientific stack (needed for doctest notebooks)
+numpy>=1.24
+scipy>=1.11
+sympy>=1.12
+matplotlib>=3.8
+pandas>=2.2
+h5py>=3.10
+
+# Sphinx + essential extensions
+sphinx>=7.2
+furo>=2024.5.6             # theme you selected
+sphinx-design>=0.5         # grid cards in index.rst
+sphinx-autodoc-typehints>=1.24
+sphinx-copybutton>=0.5
+nbsphinx>=0.9
+myst-parser>=2.0
+
+# docs/requirements.txt  (excerpt)
+pydata-sphinx-theme>=0.16
+sphinx-design>=0.5
+
+
+# Optional helpers
+requests>=2.31             # for intersphinx remote inventories

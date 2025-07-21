@@ -1,0 +1,686 @@
+/* ────────────────────────────────────────────────────────────────
+   lib-ela • PyData‑Sphinx‑Theme overrides (theme ≥ 0.16)
+   Place this file in docs/_static/custom.css
+   ──────────────────────────────────────────────────────────────── */
+
+/* 1 ══ Global palette & typography ═════════════════════════════ */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap');
+
+.module-label {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+  font-size: 1.5rem;
+  background: #f3f4f6;
+  color: #006d77;
+  border-radius: 0.5em;
+  padding: 0.1em 0.5em;
+  margin-left: 0.3em;
+  vertical-align: middle;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+
+.module-path {
+  display: block;
+  font-family: 'IBM Plex Mono', 'Menlo', 'Monaco', 'Consolas', monospace;
+  font-size: 1.3rem;
+  color: #495057;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.1em;
+}
+.api-title {
+  font-size: 2.7rem;
+  font-weight: 700;
+  color: #23272f;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  line-height: 1.1;
+}
+
+:root {
+  /* PyData theme variables */
+  --pst-font-family-base: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --pst-font-family-heading: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --pst-font-family-monospace: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+
+  /* Brand palette  🚀 */
+  --brand-primary:        #37C46C;   /* lib‑ela green (new primary) */
+  --brand-primary-dark:   #2BA35A;   /* darker hover state */
+  --brand-mint:           #B7F5A9;   /* pastel accent */
+  --brand-violet:         #37C46C;   /* legacy secondary accent */
+  --brand-text:           #2C3E50;   /* dark text for readability */
+  --brand-text-light:     #5A6C7D;   /* lighter text for secondary content */
+  --brand-bg-light:       #F8FFF8;   /* very light green background */
+  --brand-border:         #E8F5E8;   /* light border color */
+
+  /* Map to PyData tokens */
+  --pst-color-primary:    var(--brand-primary);
+  --pst-color-secondary:  var(--brand-violet);
+  --pst-color-text:       var(--brand-text);
+  --pst-color-text-muted: var(--brand-text-light);
+
+  --page-bg:              var(--brand-bg-light);
+  --surface-bg: #fff;
+  --brand-mint-bg: #B7F5A9;
+}
+
+html[data-theme="light"] { 
+  background-color: var(--page-bg); 
+  color: var(--brand-text);
+}
+
+html[data-theme="dark"] {
+  --brand-text: #E8E8E8;
+  --brand-text-light: #B0B0B0;
+  --brand-bg-light: #1A1A1A;
+  --brand-border: #2A2A2A;
+  --surface-bg: #181c1f;
+  --brand-mint-bg: #234d2b;
+}
+
+/* 1) Hero banner at top of page */
+.hero-banner {
+  background: var(--surface-bg);
+  color: var(--brand-text);
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: 0px;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ffffff;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.hero-banner .hero-content {
+  max-width: 960px;
+  margin-left: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-banner h1 {
+  font-size: 2rem;
+  margin: 0 0 1rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--brand-primary-dark);
+}
+
+.hero-banner p {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--brand-text-light);
+  margin: 0;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+/* 2) Quick-start callout styling */
+.quickstart-panel {
+  background: var(--brand-mint);
+  color: var(--brand-text);
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem auto 2.5rem;
+  max-width: 800px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(55, 196, 108, 0.15);
+}
+
+.quickstart-panel .sd-btn {
+  margin-top: 1.5rem;
+}
+
+.quickstart-panel .quickstart-btn {
+  background: #fff;
+  color: var(--brand-primary); 
+  border: none;
+  border-radius: 4px;
+  padding: 0.75em 2em;
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-top: 1.5rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s, color 0.2s;
+}
+.quickstart-panel .quickstart-btn:hover {
+  background: var(--brand-primary-dark);
+  color: #fff;
+}
+
+/* 3) Responsive, gap-controlled grid */
+.grid-home .sd-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+/* 4) Card entry animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.grid-home .sd-card {
+  opacity: 0;
+  animation: fadeInUp .8s ease forwards;
+  will-change: opacity, transform;
+}
+
+.grid-home .sd-card:nth-child(1) { animation-delay: .1s; }
+.grid-home .sd-card:nth-child(2) { animation-delay: .2s; }
+.grid-home .sd-card:nth-child(3) { animation-delay: .3s; }
+
+/* 5) Refined typography */
+.rst-content h1 {
+  font-size: 2.75rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  color: var(--brand-text);
+  line-height: 1.2;
+}
+
+.rst-content h1 + p {
+  font-size: 1.25rem;
+  margin-top: -0.75rem;
+  opacity: 0.85;
+  color: var(--brand-text-light);
+  font-weight: 400;
+}
+
+.rst-content h2 {
+  font-size: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--brand-text);
+  letter-spacing: -0.01em;
+}
+
+.rst-content h3 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: var(--brand-text);
+}
+
+.rst-content h4 {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--brand-text);
+}
+
+/* 2 ── Base elements & links ──────────────────────────────────── */
+body {
+  font-family: var(--pst-font-family-base);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--brand-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--brand-text);
+}
+
+a, .reference {
+  color: var(--brand-primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+a:hover, .reference:hover {
+  color: var(--brand-primary-dark);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+/* 3 ── Headings & sidebar logo ───────────────────────────────── */
+h1, h2, h3, h4, h5, h6 { 
+  font-weight: 600; 
+  color: var(--brand-text);
+  line-height: 1.3;
+}
+
+.bd-sidebar-primary .sidebar-logo img {
+  max-width: 180px;
+  margin: 0.75rem auto 1rem;
+  display: block;
+  filter: drop-shadow(1px 1px 1px rgba(0,0,0,.12));
+}
+
+/* 4 ── Admonitions ------------------------------------------------ */
+.admonition,
+.hint,
+.warning,
+.note {
+  border-left: 4px solid var(--brand-primary);
+  padding: 1.5rem;
+  background-color: var(--surface-bg);
+  border-radius: 0 8px 8px 0;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  color: var(--brand-text);
+}
+
+.admonition-title {
+  background: var(--brand-mint);
+  color: var(--brand-text);
+  font-weight: 600;
+  border-radius: 6px 6px 0 0;
+  padding: 0.5rem 1rem;
+  margin: -1.5rem -1.5rem 1rem -1.5rem;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* 5 ── Code blocks & copy button -------------------------------- */
+.highlight pre,
+div.nbinput .highlight pre,
+div.nboutput .highlight pre {
+  background: #f8f9fa;
+  border: 1px solid var(--brand-border);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: var(--pst-font-family-monospace);
+  line-height: 1.5;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.rst-content code.literal {
+  background: #f1f3f4;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: var(--pst-font-family-monospace);
+  font-size: 0.9em;
+  color: var(--brand-text);
+  border: 1px solid var(--brand-border);
+}
+
+button.copybtn {
+  background: var(--brand-primary) !important;
+  color: #fff !important;
+  border-radius: 6px !important;
+  border: none !important;
+  padding: 0.5rem 0.75rem !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
+}
+
+button.copybtn:hover {
+  background: var(--brand-primary-dark) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 8px rgba(55, 196, 108, 0.3) !important;
+}
+
+/* 6 ── Tables ---------------------------------------------------- */
+.rst-content table.docutils { 
+  border-collapse: collapse; 
+  margin: 1.5rem 0; 
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.rst-content th {
+  background: var(--brand-primary);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.rst-content td {
+  border: 1px solid var(--brand-border);
+  padding: 0.75rem 1.5rem;
+  background: var(--surface-bg);
+  color: var(--brand-text);
+}
+
+.rst-content tr:nth-child(even) td {
+  background: var(--brand-bg-light);
+}
+
+/* 7 ── Sidebar active page highlight ---------------------------- */
+.bd-sidebar .current > a {
+  color: var(--brand-primary);
+  font-weight: 600;
+  background: var(--brand-mint);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+}
+
+/* 8 ── Landing‑page (sphinx‑design grid) ------------------------ */
+.sd-grid > .sd-card   { margin-bottom: 1.5rem; }
+.landing-logo         { display:block; margin:2.5rem auto 3.5rem; }
+
+/* --- Card icons ------------------------------------------------- */
+.grid-home .sd-card:nth-child(1) .sd-card__icon {
+  background-image: url("/_static/icons/guide.svg");
+}
+.grid-home .sd-card:nth-child(2) .sd-card__icon {
+  background-image: url("/_static/icons/api.svg");
+}
+.grid-home .sd-card:nth-child(3) .sd-card__icon {
+  background-image: url("/_static/icons/dev.svg");
+}
+
+/* Base styling so the span is visible */
+.sd-card__icon {
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 1.2rem auto .3rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* 9 ── Buttons (filled green style) ----------------------------- */
+/* Generic sphinx‑design buttons */
+.sd-btn {
+  background: var(--brand-primary);
+  border: 2px solid var(--brand-primary);
+  color: #fff !important;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1.2;
+}
+
+.sd-btn:hover,
+.sd-btn:focus {
+  background: var(--brand-primary-dark);
+  border-color: var(--brand-primary-dark);
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(55, 196, 108, 0.3);
+  transform: translateY(-2px);
+}
+
+.sd-btn:focus-visible {
+  outline: 3px solid var(--brand-mint);
+  outline-offset: 2px;
+}
+
+/* 10 ── Card hover lift ----------------------------------------- */
+.sd-card {
+  transition: all 0.3s ease;
+  will-change: transform, box-shadow;
+  border-radius: 12px;
+  border: 1px solid var(--brand-border);
+  background: var(--surface-bg);
+}
+
+.sd-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  background: var(--surface-bg);
+}
+
+/* 11 ── Header & nav tweaks ------------------------------------- */
+.bd-header {
+  background: #fff;
+  border-bottom: 1px solid var(--brand-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.bd-header .navbar-nav a {
+  font-weight: 500;
+  color: var(--brand-text);
+  padding: 0.75rem 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.bd-header .navbar-nav a:hover {
+  color: var(--brand-primary);
+  border-bottom: 2px solid var(--brand-primary);
+  background: var(--brand-bg-light);
+}
+
+/* --- Header logo text beside logo --- */
+.bd-header .navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.bd-header .navbar-brand__text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--brand-primary);
+  letter-spacing: -0.01em;
+  margin-left: 0.25rem;
+  white-space: nowrap;
+}
+
+/* --- Navbar spacing and no stacking --- */
+.bd-header .navbar-nav {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  flex-wrap: nowrap;
+}
+.bd-header .navbar-nav > li {
+  white-space: nowrap;
+}
+
+/* --- Responsive fix for navbar --- */
+@media (max-width: 900px) {
+  .bd-header .navbar-nav {
+    gap: 0.75rem;
+  }
+}
+
+/* --- Hero card tweaks --- */
+.hero-banner {
+  box-shadow: 0 6px 32px rgba(55, 196, 108, 0.10);
+  padding: 3rem 1.5rem 2.5rem 1.5rem;
+}
+.hero-banner .hero-title {
+  display: block;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--brand-primary);
+  margin-bottom: 0.5rem;
+}
+.hero-banner .landing-logo {
+  margin-bottom: 0.5rem;
+}
+
+/* --- Ensure sphinx-design card icons show up --- */
+.sd-card__icon img, .sd-card__icon svg {
+  width: 64px;
+  height: 64px;
+  display: block;
+  margin: 0 auto 0.5rem auto;
+}
+
+/* --- Ensure hover effects are visible --- */
+.sd-card:hover, .sd-btn:hover, .bd-header .navbar-nav a:hover {
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+/* 12 ── Footer -------------------------------------------------- */
+.bd-footer {
+  background: var(--brand-bg-light);
+  color: var(--brand-text-light);
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--brand-border);
+}
+
+.bd-footer a {
+  color: var(--brand-text-light);
+  transition: color 0.2s ease;
+}
+
+.bd-footer a:hover {
+  color: var(--brand-primary);
+  text-decoration: underline;
+}
+
+/* 13 ── Responsive tweaks -------------------------------------- */
+@media (max-width: 768px) {
+  .sd-card { margin: 1rem 0 !important; }
+  .hero-banner h1 { font-size: 2rem; }
+  .hero-banner p { font-size: 1.1rem; }
+  .rst-content h1 { font-size: 2.25rem; }
+  .rst-content h2 { font-size: 1.75rem; }
+}
+
+/* === Button filled style overrides === */
+.grid-home .sd-card .sd-btn {
+  background: var(--brand-primary);
+  color: #fff !important;
+  border: 2px solid var(--brand-primary);
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.grid-home .sd-card .sd-btn:hover,
+.grid-home .sd-card .sd-btn:focus {
+  background: var(--brand-primary-dark);
+  border-color: var(--brand-primary-dark);
+  box-shadow: 0 4px 16px rgba(55, 196, 108, 0.3);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* ───────────  Card colour utilities (lib-ela)  ─────────── */
+/* Use with :class-card: in sphinx-design ``grid-item-card`` */
+
+.card-violet {                 /* lib-ela primary */
+  background: var(--brand-primary) !important;
+  color: #fff !important;
+}
+
+.card-mint {                   /* secondary mint */
+  background: var(--brand-mint) !important;
+  color: var(--brand-text) !important;
+}
+
+.card-dark {                   /* darker accent */
+  background: var(--brand-primary-dark) !important;
+  color: #fff !important;
+}
+
+/* Optional: tweak link + button colours inside coloured cards */
+.card-violet a,
+.card-dark   a { color: #fff !important; }
+
+.card-mint a { color: var(--brand-text) !important; }
+
+.card-violet .sd-btn,
+.card-dark   .sd-btn {
+  background: #fff !important;
+  color: var(--brand-primary) !important;
+  border-color: #fff !important;
+}
+
+.card-mint .sd-btn {
+  background: var(--brand-primary) !important;
+  color: #fff !important;
+  border-color: var(--brand-primary) !important;
+}
+
+/* Additional typography improvements */
+.rst-content ul, .rst-content ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.rst-content li {
+  margin-bottom: 0.5rem;
+  color: var(--brand-text);
+}
+
+.rst-content blockquote {
+  border-left: 4px solid var(--brand-primary);
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--brand-text-light);
+}
+
+/* Math improvements */
+.math {
+  font-family: 'Computer Modern', 'Times New Roman', serif;
+}
+
+/* List table improvements */
+.list-table {
+  margin: 1.5rem 0;
+}
+
+.list-table th {
+  background: var(--brand-primary);
+  color: #fff;
+  font-weight: 600;
+}
+
+.list-table td {
+  border: 1px solid var(--brand-border);
+  padding: 0.75rem 1rem;
+}
+
+/* Contents improvements */
+.contents {
+  background: var(--brand-bg-light);
+  border: 1px solid var(--brand-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.contents .toctree-wrapper {
+  margin: 0;
+}
+
+.contents .toctree-wrapper ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.contents .toctree-wrapper li {
+  margin-bottom: 0.5rem;
+}
+
+.contents .toctree-wrapper a {
+  color: var(--brand-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contents .toctree-wrapper a:hover {
+  text-decoration: underline;
+}
+
+.hidden-title {
+  display: none;
+}
