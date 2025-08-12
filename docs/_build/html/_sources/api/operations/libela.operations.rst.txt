@@ -11,16 +11,6 @@ Operations Utilities: Symbolic stress, deformation protocols, and fitting helper
 
 This module provides symbolic and numeric tools for stress computation, deformation gradient construction, and parameter fitting for all hyperelastic models. It is the core mix-in for all material models in libela.
 
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-
-   strain_converter
-   deformation_gradient_matrix
-   uniaxial_solver
-   simple_shear_solver
-   biaxial_solver
-
 Key Features
 ------------
 - Symbolic stress computation for arbitrary strain-energy functions
@@ -58,7 +48,7 @@ Functions
      - **API Reference**
    * - strain_converter
      - Converts input strain to principal stretches (λ) for stress evaluation.
-     - :func:`strain_converter`
+     - :doc:`operations.strain_converter <strain_converter>`
    * - deformation_gradient_matrix
      - Returns symbolic deformation gradient tensor F for a given loading protocol.
 
@@ -73,16 +63,16 @@ Functions
        .. math::
 
           \mathbf{F}_{\text{shear}} = \begin{bmatrix} 1 & \gamma & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}
-     - :func:`deformation_gradient_matrix`
+     - :doc:`operations.deformation_gradient_matrix <deformation_gradient_matrix>`
    * - uniaxial_solver
      - Generates a function to solve for uniaxial stress from a symbolic tensor.
-     - :func:`uniaxial_solver`
+     - :doc:`operations.uniaxial_solver <uniaxial_solver>`
    * - simple_shear_solver
      - Generates a function to solve for simple shear stress from a symbolic tensor.
-     - :func:`simple_shear_solver`
+     - :doc:`operations.simple_shear_solver <simple_shear_solver>`
    * - biaxial_solver
      - Generates functions to solve for biaxial stress components from a symbolic tensor.
-     - :func:`biaxial_solver`
+     - :doc:`operations.biaxial_solver <biaxial_solver>`
 
 .. currentmodule:: libela.hyperelastic.operations
 
@@ -90,8 +80,12 @@ Functions
    :members:
    :show-inheritance:
 
-.. autofunction:: strain_converter
-.. autofunction:: deformation_gradient_matrix
-.. autofunction:: uniaxial_solver
-.. autofunction:: simple_shear_solver
-.. autofunction:: biaxial_solver 
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   strain_converter
+   deformation_gradient_matrix
+   uniaxial_solver
+   simple_shear_solver
+   biaxial_solver

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Getting Started &#8212; lib-ela 1.0.0 documentation</title>
+    <title>Quick-start Guide &#8212; lib-ela 1.0.0 documentation</title>
   
   
   
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=bfc0e025" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=a42ccebe" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -53,7 +53,7 @@
     <script src="../_static/js/custom.js?v=7edcf280"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Getting Started with lib-ela: A Notebook Walk-through" href="getting_started_notebook.html" />
+    <link rel="next" title="lib-ela: A Notebook Walk-through" href="getting_started_notebook.html" />
     <link rel="prev" title="User Guide" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -356,8 +356,8 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started_notebook.html">Getting Started with lib-ela: A Notebook Walk-through</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Quick-start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_notebook.html">lib-ela: A Notebook Walk-through</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="hyperelastic/overview.html">Hyperelastic Materials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../theory/tutorials/hyperelastic_quickstart.html">Hyperelastic Quick-Start</a></li>
 </ul>
@@ -405,7 +405,7 @@
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">User Guide</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Getting Started</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Quick-start Guide</span></li>
   </ul>
 </nav>
 </div>
@@ -422,28 +422,32 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="getting-started">
-<span id="id1"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h1>
+  <section id="quick-start-guide">
+<span id="getting-started"></span><h1>Quick-start Guide<a class="headerlink" href="#quick-start-guide" title="Link to this heading">#</a></h1>
 <p>This quick-start takes you from <strong>pip install</strong> to your first
 stress–strain plot in under a minute.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This walkthrough is available as both a Jupyter notebook (for interactive use) and a web-friendly page (for quick reading):</p>
+<p>A more thorough walkthrough of lib-ela’s core features is available as a Jupyter notebook:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference internal" href="getting_started_notebook.html"><span class="doc">Read the Getting Started Walkthrough online</span></a></p></li>
+</ul>
+</div></blockquote>
 <ul>
 <li><a class="sd-btn sd-btn-primary" href="getting_started_notebook.ipynb" download style="margin:0.5em 0;display:inline-block;">⬇️ Download the Jupyter Notebook Walkthrough</a></li>
-<li><p><a class="reference internal" href="getting_started_notebook.html"><span class="doc">Read the Getting Started Walkthrough online</span></a></p></li>
 </ul>
 </div>
 <nav class="contents local" id="on-this-page">
 <p class="topic-title">On this page</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#install" id="id2">Install</a></p></li>
-<li><p><a class="reference internal" href="#hello-neo-hookean" id="id3">Hello, Neo-Hookean</a></p></li>
-<li><p><a class="reference internal" href="#next-steps" id="id4">Next steps</a></p></li>
+<li><p><a class="reference internal" href="#install" id="id1">Install</a></p></li>
+<li><p><a class="reference internal" href="#hello-neo-hookean" id="id2">Hello, Neo-Hookean</a></p></li>
+<li><p><a class="reference internal" href="#next-steps" id="id3">Next steps</a></p></li>
 </ul>
 </nav>
 <section id="install">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Install</a><a class="headerlink" href="#install" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Install</a><a class="headerlink" href="#install" title="Link to this heading">#</a></h2>
 <p>Create a fresh virtual environment and grab the latest release plus the
 optional Jupyter extras:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m pip install --upgrade pip</span>
@@ -452,7 +456,7 @@ optional Jupyter extras:</p>
 </div>
 </section>
 <section id="hello-neo-hookean">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Hello, Neo-Hookean</a><a class="headerlink" href="#hello-neo-hookean" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Hello, Neo-Hookean</a><a class="headerlink" href="#hello-neo-hookean" title="Link to this heading">#</a></h2>
 <p>Paste the snippet below into a Python prompt or notebook cell:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
@@ -473,7 +477,7 @@ optional Jupyter extras:</p>
 </div>
 </section>
 <section id="next-steps">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Next steps</a><a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Next steps</a><a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../theory/index.html"><span class="doc">Theory Reference</span></a> – tensor notation, invariants, derivations</p></li>
 <li><p><a class="reference internal" href="../api/index.html"><span class="doc">API Reference</span></a> – full class-by-class API reference</p></li>
@@ -506,7 +510,7 @@ optional Jupyter extras:</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Getting Started with lib-ela: A Notebook Walk-through</p>
+        <p class="prev-next-title">lib-ela: A Notebook Walk-through</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -540,7 +544,7 @@ optional Jupyter extras:</p>
 
   <p class="copyright">
     
-      © Copyright 2025, Arya Amiri, Mohamed Hassan, &amp; contributors.
+      © Copyright 2025, Arya Amiri, Mohamed Hassan, &amp; Contributors.
       <br/>
     
   </p>

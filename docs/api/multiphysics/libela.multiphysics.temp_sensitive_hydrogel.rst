@@ -1,10 +1,9 @@
-Temperature-Sensitive Hydrogel
-=============================
-
 .. raw:: html
 
    <span class="module-path">libela.multiphysics.</span>
-   <div class="api-title">temp_sensitive_hydrogel</div>
+
+temp_sensitive_hydrogel
+========================
 
 Temperature-Sensitive Hydrogel: A multiphysics model for hydrogels whose mechanical response depends on temperature.
 

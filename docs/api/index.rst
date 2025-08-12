@@ -11,7 +11,7 @@ This section is your go-to for the core modules in libela. Each link below opens
 full, module‑level API page, including classes, functions, and constants.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
    :hidden:
 
    hyperelastic/libela.hyperelastic

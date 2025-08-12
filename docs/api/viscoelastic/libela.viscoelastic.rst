@@ -40,8 +40,6 @@ Models
 .. note::
    These models are under development. API documentation will be added in a future release.
 
-Viscoelastic models (Maxwell, Kelvin–Voigt, spectral creep, beta).
-
 .. automodule:: libela.viscoelastic
     :members:
     :undoc-members:

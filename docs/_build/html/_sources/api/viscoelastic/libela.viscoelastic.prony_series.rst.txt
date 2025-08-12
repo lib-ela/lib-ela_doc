@@ -1,3 +1,6 @@
+Prony Series Model
+==================
+
 .. raw:: html
 
    <span class="module-path">libela.viscoelastic.</span>

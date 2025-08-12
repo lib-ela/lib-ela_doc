@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=bfc0e025" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=a42ccebe" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="strain_converter" href="strain_converter.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="../multiphysics/libela.multiphysics.ph_sensitive_hydrogel.html" />
+    <link rel="prev" title="pH-Sensitive Hydrogel" href="../multiphysics/libela.multiphysics.ph_sensitive_hydrogel.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -366,10 +366,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../hyperelastic/libela.hyperelastic.yeoh.html"><code class="docutils literal notranslate"><span class="pre">yeoh</span></code></a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../viscoelastic/libela.viscoelastic.html">Viscoelastic</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../viscoelastic/libela.viscoelastic.html">Viscoelastic</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../viscoelastic/libela.viscoelastic.maxwell.html">Maxwell Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../viscoelastic/libela.viscoelastic.prony_series.html">Prony Series Model</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../multiphysics/libela.multiphysics.html">Multiphysics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../multiphysics/libela.multiphysics.html">Multiphysics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../multiphysics/libela.multiphysics.temp_sensitive_hydrogel.html">Temperature-Sensitive Hydrogel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multiphysics/libela.multiphysics.ph_sensitive_hydrogel.html">pH-Sensitive Hydrogel</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Operations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -447,8 +451,6 @@
   <span class="module-label">(libela.operations)</span>
 </h1><p>Operations Utilities: Symbolic stress, deformation protocols, and fitting helpers for hyperelastic models.</p>
 <p>This module provides symbolic and numeric tools for stress computation, deformation gradient construction, and parameter fitting for all hyperelastic models. It is the core mix-in for all material models in libela.</p>
-<div class="toctree-wrapper compound">
-</div>
 <section id="key-features">
 <h2>Key Features<a class="headerlink" href="#key-features" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -501,7 +503,7 @@
 <tbody>
 <tr class="row-even"><td><p>strain_converter</p></td>
 <td><p>Converts input strain to principal stretches (λ) for stress evaluation.</p></td>
-<td><p><code class="xref py py-func docutils literal notranslate"><span class="pre">strain_converter()</span></code></p></td>
+<td><p><a class="reference internal" href="strain_converter.html"><span class="doc">operations.strain_converter</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><p>deformation_gradient_matrix</p></td>
 <td><p>Returns symbolic deformation gradient tensor F for a given loading protocol.</p>
@@ -512,19 +514,19 @@
 <div class="math notranslate nohighlight">
 \[\begin{split}\mathbf{F}_{\text{shear}} = \begin{bmatrix} 1 &amp; \gamma &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{bmatrix}\end{split}\]</div>
 </td>
-<td><p><code class="xref py py-func docutils literal notranslate"><span class="pre">deformation_gradient_matrix()</span></code></p></td>
+<td><p><a class="reference internal" href="deformation_gradient_matrix.html"><span class="doc">operations.deformation_gradient_matrix</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p>uniaxial_solver</p></td>
 <td><p>Generates a function to solve for uniaxial stress from a symbolic tensor.</p></td>
-<td><p><code class="xref py py-func docutils literal notranslate"><span class="pre">uniaxial_solver()</span></code></p></td>
+<td><p><a class="reference internal" href="uniaxial_solver.html"><span class="doc">operations.uniaxial_solver</span></a></p></td>
 </tr>
 <tr class="row-odd"><td><p>simple_shear_solver</p></td>
 <td><p>Generates a function to solve for simple shear stress from a symbolic tensor.</p></td>
-<td><p><code class="xref py py-func docutils literal notranslate"><span class="pre">simple_shear_solver()</span></code></p></td>
+<td><p><a class="reference internal" href="simple_shear_solver.html"><span class="doc">operations.simple_shear_solver</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p>biaxial_solver</p></td>
 <td><p>Generates functions to solve for biaxial stress components from a symbolic tensor.</p></td>
-<td><p><code class="xref py py-func docutils literal notranslate"><span class="pre">biaxial_solver()</span></code></p></td>
+<td><p><a class="reference internal" href="biaxial_solver.html"><span class="doc">operations.biaxial_solver</span></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -592,110 +594,8 @@ fit : Parameter fitting (placeholder).</p>
 </section>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="libela.hyperelastic.operations.strain_converter">
-<span class="sig-name descname"><span class="pre">strain_converter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strain</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strain_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/libela/hyperelastic/operations.html#strain_converter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#libela.hyperelastic.operations.strain_converter" title="Link to this definition">#</a></dt>
-<dd><p>Convert input strain into principal stretches (λ) based on the specified strain type.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>strain</strong> (<em>array_like</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a>) – The input strain array. Can be engineering strain (ε) or direct stretch (λ).</p></li>
-<li><p><strong>strain_type</strong> (<em>{'engineering'</em><em>, </em><em>'stretch'}</em>) – Type of input strain:
-- ‘engineering’: Interprets input as ε, returns λ = 1 + ε.
-- ‘stretch’: Returns the input as-is.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Normalized array of stretches λ.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>np.ndarray</p>
-</dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.13)"><strong>ValueError</strong></a> – If an invalid strain type is provided.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="libela.hyperelastic.operations.deformation_gradient_matrix">
-<span class="sig-name descname"><span class="pre">deformation_gradient_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">protocol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'uniaxial'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compressible</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/libela/hyperelastic/operations.html#deformation_gradient_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#libela.hyperelastic.operations.deformation_gradient_matrix" title="Link to this definition">#</a></dt>
-<dd><p>Return the symbolic deformation gradient tensor F for a given loading protocol.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>protocol</strong> (<em>{'uniaxial'</em><em>, </em><em>'simple_shear'</em><em>, </em><em>'biaxial'}</em>) – Type of deformation protocol.</p></li>
-<li><p><strong>compressible</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a><em>, </em><em>optional</em>) – If True, no lateral contraction is enforced (J ≠ 1 in uniaxial).</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A 3x3 symbolic deformation gradient matrix F.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>sympy.Matrix</p>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">F</span> <span class="o">=</span> <span class="n">deformation_gradient_matrix</span><span class="p">(</span><span class="s1">&#39;uniaxial&#39;</span><span class="p">)</span>
-</pre></div>
+<div class="toctree-wrapper compound">
 </div>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="libela.hyperelastic.operations.uniaxial_solver">
-<span class="sig-name descname"><span class="pre">uniaxial_solver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sigma_tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_param_symbols</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/libela/hyperelastic/operations.html#uniaxial_solver"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#libela.hyperelastic.operations.uniaxial_solver" title="Link to this definition">#</a></dt>
-<dd><p>Generate a function to solve for uniaxial stress given a symbolic stress tensor.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>sigma_tensor</strong> (<em>sympy.Matrix</em>) – Symbolic stress tensor.</p></li>
-<li><p><strong>P</strong> (<em>sympy.Symbol</em>) – Lagrange multiplier for incompressibility.</p></li>
-<li><p><strong>model_param_symbols</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a>) – List of model parameter symbols.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Function that computes uniaxial stress for given stretches and parameters.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>function</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="libela.hyperelastic.operations.simple_shear_solver">
-<span class="sig-name descname"><span class="pre">simple_shear_solver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sigma_tensor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/libela/hyperelastic/operations.html#simple_shear_solver"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#libela.hyperelastic.operations.simple_shear_solver" title="Link to this definition">#</a></dt>
-<dd><p>Generate a function to solve for simple shear stress given a symbolic stress tensor.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>sigma_tensor</strong> (<em>sympy.Matrix</em>) – Symbolic stress tensor.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Function that computes shear stress for given strains and parameters.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>function</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="libela.hyperelastic.operations.biaxial_solver">
-<span class="sig-name descname"><span class="pre">biaxial_solver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sigma_tensor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/libela/hyperelastic/operations.html#biaxial_solver"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#libela.hyperelastic.operations.biaxial_solver" title="Link to this definition">#</a></dt>
-<dd><p>Generate functions to solve for biaxial stress components given a symbolic stress tensor.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>sigma_tensor</strong> (<em>sympy.Matrix</em>) – Symbolic stress tensor.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Functions that compute σ₁₁ and σ₂₂ for given stretches and parameters.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.13)">tuple</a> of functions</p>
-</dd>
-</dl>
-</dd></dl>
-
 </section>
 </section>
 
@@ -715,7 +615,7 @@ fit : Parameter fitting (placeholder).</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">pH-Sensitive Hydrogel</p>
       </div>
     </a>
     <a class="right-next"
@@ -757,7 +657,7 @@ fit : Parameter fitting (placeholder).</p>
 
   <p class="copyright">
     
-      © Copyright 2025, Arya Amiri, Mohamed Hassan, &amp; contributors.
+      © Copyright 2025, Arya Amiri, Mohamed Hassan, &amp; Contributors.
       <br/>
     
   </p>

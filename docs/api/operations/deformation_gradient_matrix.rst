@@ -1,12 +1,15 @@
 .. raw:: html
 
    <span class="module-path">libela.operations.</span>
-   <div class="api-title">deformation_gradient_matrix</div>
 
 .. _deformation_gradient_matrix:
 
 deformation_gradient_matrix
 ===========================
+
+Deformation Gradient Matrix: deformation gradients used in lib-ela for evaluating hyperelastic stress responses and generating synthetic data.
+
+.. currentmodule:: libela.hyperelastic.operations
 
 .. autofunction:: libela.hyperelastic.operations.deformation_gradient_matrix
    :no-index: 

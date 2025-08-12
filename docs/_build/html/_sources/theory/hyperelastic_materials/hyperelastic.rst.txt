@@ -1,6 +1,6 @@
 .. _th_hyperelastic_derivation:
 
-Hyperelasticity — Theory & Derivation
+Hyperelasticity Theory & Derivation
 =====================================
 
 .. contents::

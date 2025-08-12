@@ -1,20 +1,21 @@
 .. _getting_started:
 
-Getting Started
-===============
+Quick-start Guide
+=================
 
 This quick-start takes you from **pip install** to your first
 stress–strain plot in under a minute.
 
 .. note::
 
-   This walkthrough is available as both a Jupyter notebook (for interactive use) and a web-friendly page (for quick reading):
+   A more thorough walkthrough of lib-ela's core features is available as a Jupyter notebook:
+
+    - :doc:`Read the Getting Started Walkthrough online <getting_started_notebook>`
 
    - .. raw:: html
 
         <a class="sd-btn sd-btn-primary" href="getting_started_notebook.ipynb" download style="margin:0.5em 0;display:inline-block;">⬇️ Download the Jupyter Notebook Walkthrough</a>
-
-   - :doc:`Read the Getting Started Walkthrough online <getting_started_notebook>`
+  
 
 .. contents:: On this page
    :local:

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; lib-ela 1.0.0 documentation</title>
+    <title>Maxwell Model &#8212; lib-ela 1.0.0 documentation</title>
   
   
   
@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=bfc0e025" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=a42ccebe" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -53,7 +53,7 @@
     <script src="../../_static/js/custom.js?v=7edcf280"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="libela.viscoelastic.prony_series.html" />
+    <link rel="next" title="Prony Series Model" href="libela.viscoelastic.prony_series.html" />
     <link rel="prev" title="Viscoelastic" href="libela.viscoelastic.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -355,7 +355,7 @@
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../hyperelastic/libela.hyperelastic.html">Hyperelastic</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../hyperelastic/libela.hyperelastic.neohookean.html"><code class="docutils literal notranslate"><span class="pre">neohookean</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../hyperelastic/libela.hyperelastic.mooneyrivlin.html"><code class="docutils literal notranslate"><span class="pre">mooneyrivlin</span></code></a></li>
@@ -364,15 +364,18 @@
 <li class="toctree-l2"><a class="reference internal" href="../hyperelastic/libela.hyperelastic.yeoh.html"><code class="docutils literal notranslate"><span class="pre">yeoh</span></code></a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="libela.viscoelastic.html">Viscoelastic</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="libela.viscoelastic.html">Viscoelastic</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Maxwell Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libela.viscoelastic.prony_series.html">Prony Series Model</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../multiphysics/libela.multiphysics.html">Multiphysics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../multiphysics/libela.multiphysics.html">Multiphysics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../multiphysics/libela.multiphysics.temp_sensitive_hydrogel.html">Temperature-Sensitive Hydrogel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multiphysics/libela.multiphysics.ph_sensitive_hydrogel.html">pH-Sensitive Hydrogel</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../operations/libela.operations.html">Operations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../operations/strain_converter.html">strain_converter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../operations/deformation_gradient_matrix.html">deformation_gradient_matrix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../operations/uniaxial_solver.html">uniaxial_solver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../operations/simple_shear_solver.html">simple_shear_solver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../operations/biaxial_solver.html">biaxial_solver</a></li>
@@ -425,7 +428,7 @@
     
     <li class="breadcrumb-item"><a href="libela.viscoelastic.html" class="nav-link">Viscoelastic</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">&lt;no title&gt;</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Maxwell Model</span></li>
   </ul>
 </nav>
 </div>
@@ -442,12 +445,15 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <span class="module-path">libela.viscoelastic.</span>
+  <section id="maxwell-model">
+<h1>Maxwell Model<a class="headerlink" href="#maxwell-model" title="Link to this heading">#</a></h1>
+<span class="module-path">libela.viscoelastic.</span>
 <div class="api-title">maxwell</div><p>Maxwell Model: A classic viscoelastic model combining a spring and dashpot in series. Used for time-dependent stress relaxation and creep.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This model is under development. API documentation will be added in a future release.</p>
 </div>
+</section>
 
 
                 </article>
@@ -473,7 +479,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title">Prony Series Model</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -507,7 +513,7 @@
 
   <p class="copyright">
     
-      © Copyright 2025, Arya Amiri, Mohamed Hassan, &amp; contributors.
+      © Copyright 2025, Arya Amiri, Mohamed Hassan, &amp; Contributors.
       <br/>
     
   </p>

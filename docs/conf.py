@@ -4,7 +4,7 @@
 #  Requirements
 #  ------------
 #  * sphinx ≥ 7.2
-#  * pydata-sphinx-theme ≥ 0.16 (for the theme options below)
+#  * pydata-sphinx-theme ≥ 0.16 
 #  * myst-parser, nbsphinx, sphinx-design, sphinx-copybutton …
 # -----------------------------------------------------------------------------
 from __future__ import annotations
@@ -13,7 +13,7 @@ import sys
 from pathlib import Path
 
 # -----------------------------------------------------------------
-# 1. Path management – make sure *installed* libela is importable
+# 1. Path management – make sure libela is importable
 # -----------------------------------------------------------------
 DOCS_DIR = Path(__file__).resolve().parent  # …/repo/docs
 ROOT = DOCS_DIR.parent                      # …/repo
@@ -23,7 +23,7 @@ sys.path.insert(0, str(ROOT))
 # 2. Project metadata
 # -----------------------------------------------------------------
 project   = "lib-ela"
-author    = "Arya Amiri, Mohamed Hassan, & contributors"
+author    = "Arya Amiri, Mohamed Hassan, & Contributors"
 copyright = f"{datetime.datetime.now().year}, {author}"
 release   = "1.0.0"
 
@@ -60,17 +60,12 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 # -----------------------------------------------------------------
 # 5. Autosummary / autodoc
 # -----------------------------------------------------------------
-autosummary_generate = False            # generate stub .rst files automatically
+autosummary_generate = False            # do not auto-generate stubs
 autosummary_output_dir = "api/generated"
 autosummary_generate_overwrite = False # never clobber hand‑written stubs
 
 add_module_names = False               # keep dotted names compact in signatures
 autodoc_member_order = "bysource"
-autodoc_mock_imports = [               # optional heavy deps that aren’t needed
-    "libela.viscoelastic",
-    "libela.multiphysics",
-    "libela.fitting",
-]
 autodoc_default_options = {
     "members": True,
     "show-inheritance": True,

@@ -112,7 +112,7 @@ html[data-theme="dark"] {
 .hero-banner p {
   font-size: 1.25rem;
   font-weight: 400;
-  color: var(--brand-text-light);
+  color: var(--brand-text);
   margin: 0;
   line-height: 1.6;
   max-width: 800px;
@@ -120,14 +120,23 @@ html[data-theme="dark"] {
 
 /* 2) Quick-start callout styling */
 .quickstart-panel {
-  background: var(--brand-mint);
-  color: var(--brand-text);
+  background: var(--brand-primary);
+  color: var(--brand-bg-light);
   padding: 2rem;
   border-radius: 8px;
   margin: 2rem auto 2.5rem;
   max-width: 800px;
   text-align: center;
   box-shadow: 0 4px 20px rgba(55, 196, 108, 0.15);
+}
+
+.quickstart-panel p {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--brand-bg-light);
+  margin: 0;
+  line-height: 1.6;
+  max-width: 800px;
 }
 
 .quickstart-panel .sd-btn {
@@ -503,7 +512,7 @@ button.copybtn:hover {
   display: block;
   font-size: 2rem;
   font-weight: 600;
-  color: var(--brand-primary);
+  color: var(--brand-primary-dark);
   margin-bottom: 0.5rem;
 }
 .hero-banner .landing-logo {

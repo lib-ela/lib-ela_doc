@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=bfc0e025" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=a42ccebe" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -364,10 +364,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../hyperelastic/libela.hyperelastic.yeoh.html"><code class="docutils literal notranslate"><span class="pre">yeoh</span></code></a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../viscoelastic/libela.viscoelastic.html">Viscoelastic</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../viscoelastic/libela.viscoelastic.html">Viscoelastic</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../viscoelastic/libela.viscoelastic.maxwell.html">Maxwell Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../viscoelastic/libela.viscoelastic.prony_series.html">Prony Series Model</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../multiphysics/libela.multiphysics.html">Multiphysics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../multiphysics/libela.multiphysics.html">Multiphysics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../multiphysics/libela.multiphysics.temp_sensitive_hydrogel.html">Temperature-Sensitive Hydrogel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multiphysics/libela.multiphysics.ph_sensitive_hydrogel.html">pH-Sensitive Hydrogel</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="libela.operations.html">Operations</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -445,6 +449,7 @@
   <span class="module-path">libela.operations.</span>
 <div class="api-title">biaxial_solver</div><section id="biaxial-solver">
 <span id="id1"></span><h1>biaxial_solver<a class="headerlink" href="#biaxial-solver" title="Link to this heading">#</a></h1>
+<p>Biaxial Solver: Computes stress for biaxial deformation protocols using symbolic strain-energy functions.</p>
 <dl class="py function">
 <dt class="sig sig-object py">
 <span class="sig-name descname"><span class="pre">biaxial_solver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sigma_tensor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/libela/hyperelastic/operations.html#biaxial_solver"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
@@ -522,7 +527,7 @@
 
   <p class="copyright">
     
-      © Copyright 2025, Arya Amiri, Mohamed Hassan, &amp; contributors.
+      © Copyright 2025, Arya Amiri, Mohamed Hassan, &amp; Contributors.
       <br/>
     
   </p>

@@ -1,10 +1,9 @@
-pH-Sensitive Hydrogel
-=====================
-
 .. raw:: html
 
    <span class="module-path">libela.multiphysics.</span>
-   <div class="api-title">ph_sensitive_hydrogel</div>
+
+ph_sensitive_hydrogel
+======================
 
 pH-Sensitive Hydrogel: A multiphysics model for hydrogels whose mechanical response depends on pH.
 

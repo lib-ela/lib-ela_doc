@@ -223,6 +223,8 @@ def strain_converter(strain, strain_type):
     ------
     ValueError
         If an invalid strain type is provided.
+        
+    
     """
     strain = np.asarray(strain)
     
