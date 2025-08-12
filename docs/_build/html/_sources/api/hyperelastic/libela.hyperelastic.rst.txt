@@ -1,12 +1,12 @@
-Hyperelastic
-=============
-
 .. raw:: html
 
    <h1 style="font-size:2.5rem;font-weight:700;margin-bottom:0.2em;">
      
      <span class="module-label">(libela.hyperelastic)</span>
    </h1>
+
+Hyperelastic
+=============
 
 Symbolic strain-energy models for hyperelastic materials. Each class defines a strain-energy function :math:`W(I_1, I_2, J, \ldots)` and inherits symbolic stress evaluation from the operations mix-in.
 

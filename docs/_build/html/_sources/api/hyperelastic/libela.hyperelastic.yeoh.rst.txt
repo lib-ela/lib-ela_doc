@@ -1,7 +1,9 @@
 ﻿.. raw:: html
 
    <span class="module-path">libela.hyperelastic.</span>
-   <div class="api-title">yeoh</div>
+
+yeoh
+================
 
 Yeoh Model: A three-term model good for modeling large deformations, based only on the first invariant.
 

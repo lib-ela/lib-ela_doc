@@ -1,7 +1,9 @@
 ﻿.. raw:: html
 
    <span class="module-path">libela.hyperelastic.</span>
-   <div class="api-title">polynomial</div>
+
+polynomial
+================
 
 Polynomial Model: A general, flexible form for fitting experimental data with multiple invariants.
 
