@@ -2,7 +2,7 @@
 
    <span class="module-path">libela.viscoelastic.</span>
 
-prony_series_model
+prony_series
 ==================
 Prony Series Model: A generalized Maxwell model using a sum of spring-dashpot elements to capture complex viscoelastic behavior.
 

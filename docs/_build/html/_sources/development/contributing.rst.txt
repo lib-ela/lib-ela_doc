@@ -7,9 +7,6 @@ Whether you want to fix a typo or implement an entire material model, this
 page will help you get started. Please read the guidelines below before 
 submitting a pull request.
 
-.. contents::
-   :depth: 2
-
 
 1. Workflow overview
 --------------------

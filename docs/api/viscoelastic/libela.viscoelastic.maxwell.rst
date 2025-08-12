@@ -2,7 +2,7 @@
 
    <span class="module-path">libela.viscoelastic.</span>
 
-maxwell_model
+maxwell
 =============
 Maxwell Model: A classic viscoelastic model combining a spring and dashpot in series. Used for time-dependent stress relaxation and creep.
 

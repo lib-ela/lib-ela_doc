@@ -8,7 +8,8 @@ Welcome to lib-ela's documentation!
    <div class="hero-banner">
      <div class="hero-content">
        <h1></h1>
-       <p>lib-ela is a scientific computing library for symbolic modeling of constitutive behavior, deformation protocols, and material response.</p>
+       <p>lib-ela is a open source scientific computing library for Solid Mechanics.</p>
+       <p>symbolic modeling of constitutive behavior, deformation protocols, material response, and more...</p>
      </div>
      
      <div class="quickstart-panel">
