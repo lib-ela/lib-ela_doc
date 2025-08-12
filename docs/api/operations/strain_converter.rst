@@ -1,8 +1,7 @@
+.. _strain_converter:
 .. raw:: html
 
    <span class="module-path">libela.operations.</span>
-
-.. _strain_converter:
 
 strain_converter
 ================

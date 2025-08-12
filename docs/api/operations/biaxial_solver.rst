@@ -1,8 +1,7 @@
+.. _biaxial_solver:
 .. raw:: html
 
    <span class="module-path">libela.operations.</span>
-
-.. _biaxial_solver:
 
 biaxial_solver
 ==============

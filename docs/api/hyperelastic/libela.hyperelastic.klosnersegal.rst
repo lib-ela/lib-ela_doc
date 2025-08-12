@@ -1,7 +1,9 @@
 ﻿.. raw:: html
 
    <span class="module-path">libela.hyperelastic.</span>
-   <div class="api-title">klosnersegal</div>
+
+klosnersegal
+==============
 
 Klosner-Segal Model: A four-term model for advanced fitting of hyperelastic materials.
 

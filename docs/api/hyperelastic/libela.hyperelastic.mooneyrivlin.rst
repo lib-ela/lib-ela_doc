@@ -1,8 +1,9 @@
 ﻿.. raw:: html
 
    <span class="module-path">libela.hyperelastic.</span>
-   <div class="api-title">mooneyrivlin</div>
 
+mooneyrivlin
+================
 Mooney-Rivlin Model: A two-parameter model that captures nonlinearity in rubber elasticity.
 
 .. math::

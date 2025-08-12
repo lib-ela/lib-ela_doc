@@ -1,8 +1,7 @@
+.. _deformation_gradient_matrix:
 .. raw:: html
 
    <span class="module-path">libela.operations.</span>
-
-.. _deformation_gradient_matrix:
 
 deformation_gradient_matrix
 ===========================

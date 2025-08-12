@@ -1,8 +1,9 @@
 ﻿.. raw:: html
 
    <span class="module-path">libela.hyperelastic.</span>
-   <div class="api-title">neohookean</div>
 
+neohookean
+================
 Neo-Hookean Model: A simple, isotropic, incompressible (or compressible) hyperelastic model for rubber-like materials.
 
 .. math::

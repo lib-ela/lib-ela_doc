@@ -84,7 +84,7 @@ Functions
    :maxdepth: 1
    :hidden:
 
-   strain_converter
+   :doc:`strain converter <strain_converter>`
    deformation_gradient_matrix
    uniaxial_solver
    simple_shear_solver

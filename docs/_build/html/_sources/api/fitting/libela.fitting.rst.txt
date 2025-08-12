@@ -1,12 +1,12 @@
-Fitting
-==============
-
 .. raw:: html
 
    <h1 style="font-size:2.5rem;font-weight:700;margin-bottom:0.2em;">
      Fitting
      <span class="module-label">(libela.fitting)</span>
    </h1>
+
+Fitting
+==============
 
 .. note::
    This API reference page is a stub for the fitting module. Full documentation will be added in a future release.

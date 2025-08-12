@@ -641,6 +641,8 @@
 <span class="sd">    ------</span>
 <span class="sd">    ValueError</span>
 <span class="sd">        If an invalid strain type is provided.</span>
+<span class="sd">        </span>
+<span class="sd">    </span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">strain</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">strain</span><span class="p">)</span>
     
@@ -653,7 +655,7 @@
 
     
 <div class="viewcode-block" id="deformation_gradient_matrix">
-<a class="viewcode-back" href="../../../api/operations/libela.operations.html#libela.hyperelastic.operations.deformation_gradient_matrix">[docs]</a>
+<a class="viewcode-back" href="../../../api/operations/deformation_gradient_matrix.html#libela.hyperelastic.operations.deformation_gradient_matrix">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">deformation_gradient_matrix</span><span class="p">(</span><span class="n">protocol</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;uniaxial&#39;</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">compressible</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return the symbolic deformation gradient tensor F for a given loading protocol.</span>
@@ -758,7 +760,7 @@
 
 
 <div class="viewcode-block" id="biaxial_solver">
-<a class="viewcode-back" href="../../../api/operations/libela.operations.html#libela.hyperelastic.operations.biaxial_solver">[docs]</a>
+<a class="viewcode-back" href="../../../api/operations/biaxial_solver.html#libela.hyperelastic.operations.biaxial_solver">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">biaxial_solver</span><span class="p">(</span><span class="n">sigma_tensor</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Generate functions to solve for biaxial stress components given a symbolic stress tensor.</span>
