@@ -113,7 +113,5 @@ Further reading
 
 .. hint::
 
-   Jump back to the :doc:`User-guide overview
-   <../../user_guide/hyperelastic/overview>` for practical code examples,
-   or see the :doc:`material models list <../material_models>` for closed-form
+   see the :doc:`material models list <../material_models>` for closed-form
    expressions of :math:`W`.

@@ -33,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=a42ccebe" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=62aa4948" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -56,7 +57,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Viscoelasticity Theory &amp; Derivation" href="../viscoelastic/viscoelastic.html" />
-    <link rel="prev" title="Theory Reference" href="../index.html" />
+    <link rel="prev" title="Theory" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -159,7 +160,7 @@
 
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="../index.html">
-    Theory Reference
+    Theory
   </a>
 </li>
 
@@ -204,14 +205,6 @@
 </form>
         </div>
       
-      
-        <div class="navbar-item">
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -296,7 +289,7 @@
 
 <li class="nav-item current active">
   <a class="nav-link nav-internal" href="../index.html">
-    Theory Reference
+    Theory
   </a>
 </li>
 
@@ -324,14 +317,6 @@
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item">
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
-        
           <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
         <li class="nav-item">
@@ -357,14 +342,13 @@
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+  <div class="bd-toc-item navbar-nav"><ul class="list-caption"><li class="toctree-l0 has-children"><details open><summary><p aria-level="2" class="caption" role="heading"><span class="caption-text">Theory</span></p><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Hyperelasticity Theory &amp; Derivation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../viscoelastic/viscoelastic.html">Viscoelasticity Theory &amp; Derivation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../multiphysics/multiphysics.html">Multiphysics Theory &amp; Derivation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../material_models.html">Material Model Catalogue</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deformation_protocols.html">Deformation Protocols</a></li>
-</ul>
-</div>
+</ul></details></li></ul></div>
 </nav></div>
     </div>
   
@@ -404,7 +388,7 @@
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Theory Reference</a></li>
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Theory</a></li>
     
     <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Hyperelasticity Theory &amp; Derivation</span></li>
   </ul>
@@ -534,8 +518,7 @@ Mechanics</em> (2017). DOI: <cite>10.1002/9781119176817</cite>.</p></li>
 <hr class="docutils" />
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>Jump back to the <a class="reference internal" href="../../user_guide/hyperelastic/overview.html"><span class="doc">User-guide overview</span></a> for practical code examples,
-or see the <a class="reference internal" href="../material_models.html"><span class="doc">material models list</span></a> for closed-form
+<p>see the <a class="reference internal" href="../material_models.html"><span class="doc">material models list</span></a> for closed-form
 expressions of <span class="math notranslate nohighlight">\(W\)</span>.</p>
 </div>
 </section>
@@ -557,7 +540,7 @@ expressions of <span class="math notranslate nohighlight">\(W\)</span>.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Theory Reference</p>
+        <p class="prev-next-title">Theory</p>
       </div>
     </a>
     <a class="right-next"

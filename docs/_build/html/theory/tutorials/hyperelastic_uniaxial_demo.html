@@ -33,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=a42ccebe" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=62aa4948" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -53,7 +54,7 @@
     <script src="../../_static/js/custom.js?v=7edcf280"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Incompressible vs Nearly-Incompressible Hyperelasticity" href="hyperelastic_incompressible_vs_nearly.html" />
+    <link rel="next" title="Working with Compressibility" href="hyperelastic_incompressible_vs_nearly.html" />
     <link rel="prev" title="Tutorials" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -157,7 +158,7 @@
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../index.html">
-    Theory Reference
+    Theory
   </a>
 </li>
 
@@ -202,14 +203,6 @@
 </form>
         </div>
       
-      
-        <div class="navbar-item">
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -294,7 +287,7 @@
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../index.html">
-    Theory Reference
+    Theory
   </a>
 </li>
 
@@ -322,14 +315,6 @@
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item">
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
-        
           <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
         <li class="nav-item">
@@ -355,12 +340,11 @@
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+  <div class="bd-toc-item navbar-nav"><ul class="list-caption"><li class="toctree-l0 has-children"><details open><summary><p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Uniaxial Neo-Hookean Demo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hyperelastic_incompressible_vs_nearly.html">Incompressible vs Nearly-Incompressible Hyperelasticity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hyperelastic_biaxial_inflation.html">Biaxial Inflation: Balloon-Type Loading</a></li>
-</ul>
-</div>
+<li class="toctree-l1"><a class="reference internal" href="hyperelastic_incompressible_vs_nearly.html">Working with Compressibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hyperelastic_biaxial_inflation.html">Biaxial Inflation</a></li>
+</ul></details></li></ul></div>
 </nav></div>
     </div>
   
@@ -420,111 +404,124 @@
                 <article class="bd-article">
                   
   <section id="uniaxial-neo-hookean-demo">
-<span id="tut-hyperelastic-uniaxial"></span><h1>Uniaxial Neo-Hookean Demo<a class="headerlink" href="#uniaxial-neo-hookean-demo" title="Link to this heading">#</a></h1>
-<nav class="contents local" id="contents">
+<span id="tut-hyperelastic-uniaxial-demo"></span><h1>Uniaxial Neo-Hookean Demo<a class="headerlink" href="#uniaxial-neo-hookean-demo" title="Link to this heading">#</a></h1>
+<p>This tutorial demonstrates how to use <strong>lib-ela</strong> to model the uniaxial
+deformation of a Neo-Hookean material, a classic example in nonlinear
+elasticity.</p>
+<div class="tutorial-section docutils container">
+<p class="tutorial-section-title rubric">Learning Objectives</p>
+<p>By the end of this tutorial, you will be able to:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#goals" id="id1">Goals</a></p>
-<ul>
-<li><p><a class="reference internal" href="#prerequisites" id="id2">Prerequisites</a></p></li>
+<li><p>Instantiate a <strong>Neo-Hookean</strong> material from <em>lib-ela</em></p></li>
+<li><p>Compute the <strong>Cauchy stress</strong> as the uniaxial stretch λ increases</p></li>
+<li><p>Plot the stress–stretch curve and mark the tangent modulus</p></li>
+<li><p>Interpret the mechanical response of the material</p></li>
 </ul>
-</li>
-<li><p><a class="reference internal" href="#step-1-set-up" id="id3">Step 1 — Set-up</a></p></li>
-<li><p><a class="reference internal" href="#step-2-generate-a-stretch-range" id="id4">Step 2 — Generate a stretch range</a></p></li>
-<li><p><a class="reference internal" href="#step-3-plot-and-annotate" id="id5">Step 3 — Plot and annotate</a></p></li>
-<li><p><a class="reference internal" href="#step-4-compare-with-a-nearly-incompressible-variant" id="id6">Step 4 — Compare with a nearly-incompressible variant</a></p></li>
-<li><p><a class="reference internal" href="#next-steps" id="id7">Next steps</a></p></li>
-</ul>
-</nav>
-<section id="goals">
-<h2><a class="toc-backref" href="#id1" role="doc-backlink">Goals</a><a class="headerlink" href="#goals" title="Link to this heading">#</a></h2>
+</div>
+<div class="tutorial-prerequisites docutils container">
+<p class="tutorial-section-title rubric">Prerequisites</p>
+<div class="tutorial-prerequisites-content docutils container">
 <ul class="simple">
-<li><p>Instantiate a <strong>Neo-Hookean</strong> material from <em>lib-ela</em>.</p></li>
-<li><p>Compute the <strong>Cauchy stress</strong> as the uniaxial stretch λ increases.</p></li>
-<li><p>Plot the stress–stretch curve and mark the tangent modulus.</p></li>
+<li><p>Basic knowledge of Python programming</p></li>
+<li><p>Familiarity with Jupyter Notebooks (recommended)</p></li>
+<li><p>Basic understanding of continuum mechanics concepts</p></li>
 </ul>
-<section id="prerequisites">
-<h3><a class="toc-backref" href="#id2" role="doc-backlink">Prerequisites</a><a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h3>
-<p>Install the base library plus <strong>matplotlib</strong>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>lib-ela<span class="w"> </span>matplotlib
+</div>
+<div class="tutorial-prerequisites-install docutils container">
+<p class="rubric">Installation</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>lib-ela<span class="w"> </span>matplotlib<span class="w"> </span>numpy
 </pre></div>
 </div>
-</section>
-</section>
-<section id="step-1-set-up">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Step 1 — Set-up</a><a class="headerlink" href="#step-1-set-up" title="Link to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">libela.hyperelastic</span><span class="w"> </span><span class="kn">import</span> <span class="n">NeoHookean</span>
-
-<span class="n">E</span><span class="p">,</span> <span class="n">nu</span> <span class="o">=</span> <span class="mf">10e6</span><span class="p">,</span> <span class="mf">0.45</span>          <span class="c1"># Pa, –</span>
-<span class="n">mat</span> <span class="o">=</span> <span class="n">NeoHookean</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="n">E</span><span class="p">,</span> <span class="n">nu</span><span class="o">=</span><span class="n">nu</span><span class="p">)</span>
+</div>
+</div>
+<div class="tutorial-section docutils container">
+<p class="tutorial-section-title rubric" id="tutorial-uniaxial-setup">Step 1: Set Up the Environment</p>
+<div class="tutorial-note docutils container">
+<p class="rubric">Note</p>
+<p>This tutorial assumes you have a working Python environment. We recommend using
+<a class="reference external" href="https://jupyter.org/install">Jupyter Lab</a> or
+<a class="reference external" href="https://colab.research.google.com">Google Colab</a> for an interactive experience.</p>
+</div>
+<p>Let’s start by importing the required libraries and setting up our material model:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span class="hll"><span class="linenos">2</span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</span><span class="hll"><span class="linenos">3</span><span class="kn">from</span><span class="w"> </span><span class="nn">libela.hyperelastic</span><span class="w"> </span><span class="kn">import</span> <span class="n">NeoHookean</span>
+</span><span class="linenos">4</span>
+<span class="linenos">5</span><span class="c1"># Material properties (SI units: Pa, -)</span>
+<span class="hll"><span class="linenos">6</span><span class="n">E</span><span class="p">,</span> <span class="n">nu</span> <span class="o">=</span> <span class="mf">10e6</span><span class="p">,</span> <span class="mf">0.45</span>  <span class="c1"># Young&#39;s modulus and Poisson&#39;s ratio</span>
+</span><span class="hll"><span class="linenos">7</span>
+</span><span class="linenos">8</span><span class="c1"># Create the Neo-Hookean material model</span>
+<span class="linenos">9</span><span class="n">mat</span> <span class="o">=</span> <span class="n">NeoHookean</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="n">E</span><span class="p">,</span> <span class="n">nu</span><span class="o">=</span><span class="n">nu</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="step-2-generate-a-stretch-range">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">Step 2 — Generate a stretch range</a><a class="headerlink" href="#step-2-generate-a-stretch-range" title="Link to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.00</span><span class="p">,</span> <span class="mf">2.00</span><span class="p">,</span> <span class="mi">61</span><span class="p">)</span>          <span class="c1"># 0 % … 100 % engineering strain</span>
-<span class="n">sigma</span> <span class="o">=</span> <span class="n">mat</span><span class="o">.</span><span class="n">stress</span><span class="p">(</span>
-    <span class="n">lam</span><span class="p">,</span>
-    <span class="n">protocol</span><span class="o">=</span><span class="s2">&quot;uniaxial&quot;</span><span class="p">,</span>
-    <span class="n">stress_type</span><span class="o">=</span><span class="s2">&quot;cauchy&quot;</span><span class="p">,</span>                  <span class="c1"># returns array</span>
-<span class="p">)</span>
+</div>
+<div class="tutorial-section docutils container">
+<p class="tutorial-section-title rubric">Step 2: Generate a Stretch Range</p>
+<p>Next, we’ll create a range of uniaxial stretches to analyze the material’s response:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.00</span><span class="p">,</span> <span class="mf">2.00</span><span class="p">,</span> <span class="mi">61</span><span class="p">)</span>          <span class="c1"># 0 % … 100 % engineering strain</span>
+<span class="linenos">2</span><span class="n">sigma</span> <span class="o">=</span> <span class="n">mat</span><span class="o">.</span><span class="n">stress</span><span class="p">(</span>
+<span class="linenos">3</span>    <span class="n">lam</span><span class="p">,</span>
+<span class="linenos">4</span>    <span class="n">protocol</span><span class="o">=</span><span class="s2">&quot;uniaxial&quot;</span><span class="p">,</span>
+<span class="linenos">5</span>    <span class="n">stress_type</span><span class="o">=</span><span class="s2">&quot;cauchy&quot;</span><span class="p">,</span>                  <span class="c1"># returns array</span>
+<span class="linenos">6</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="step-3-plot-and-annotate">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">Step 3 — Plot and annotate</a><a class="headerlink" href="#step-3-plot-and-annotate" title="Link to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">/</span> <span class="mf">1e6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Neo-Hookean&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Stretch λ (–)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Cauchy stress (MPa)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Uniaxial tension&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># tangent modulus at λ = 1.2</span>
-<span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">lam</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">sigma</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">/</span> <span class="mf">1e6</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
-    <span class="n">lam</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.02</span><span class="p">,</span>
-    <span class="n">sigma</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">/</span> <span class="mf">1e6</span><span class="p">,</span>
-    <span class="sa">f</span><span class="s2">&quot;Tangent ≈ </span><span class="si">{</span><span class="n">mat</span><span class="o">.</span><span class="n">tangent</span><span class="p">(</span><span class="n">lam</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> MPa&quot;</span><span class="p">,</span>
-    <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</div>
+<div class="tutorial-section docutils container">
+<p class="tutorial-section-title rubric">Step 3: Plot and Annotate</p>
+<p>Now, let’s visualize the stress–stretch curve and mark the tangent modulus:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="linenos"> 2</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">/</span> <span class="mf">1e6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Neo-Hookean&quot;</span><span class="p">)</span>
+<span class="linenos"> 3</span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Stretch λ (–)&quot;</span><span class="p">)</span>
+<span class="linenos"> 4</span><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Cauchy stress (MPa)&quot;</span><span class="p">)</span>
+<span class="linenos"> 5</span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Uniaxial tension&quot;</span><span class="p">)</span>
+<span class="linenos"> 6</span><span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="c1"># tangent modulus at λ = 1.2</span>
+<span class="linenos"> 9</span><span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">searchsorted</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">)</span>
+<span class="linenos">10</span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">lam</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">sigma</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">/</span> <span class="mf">1e6</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
+<span class="linenos">11</span><span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+<span class="linenos">12</span>    <span class="n">lam</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.02</span><span class="p">,</span>
+<span class="linenos">13</span>    <span class="n">sigma</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">/</span> <span class="mf">1e6</span><span class="p">,</span>
+<span class="linenos">14</span>    <span class="sa">f</span><span class="s2">&quot;Tangent ≈ </span><span class="si">{</span><span class="n">mat</span><span class="o">.</span><span class="n">tangent</span><span class="p">(</span><span class="n">lam</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> MPa&quot;</span><span class="p">,</span>
+<span class="linenos">15</span>    <span class="n">va</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+<span class="linenos">16</span><span class="p">)</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="linenos">19</span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</section>
-<section id="step-4-compare-with-a-nearly-incompressible-variant">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">Step 4 — Compare with a nearly-incompressible variant</a><a class="headerlink" href="#step-4-compare-with-a-nearly-incompressible-variant" title="Link to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">libela.hyperelastic</span><span class="w"> </span><span class="kn">import</span> <span class="n">NearlyIncompressibleMixin</span>
-
-<span class="k">class</span><span class="w"> </span><span class="nc">NH_NI</span><span class="p">(</span><span class="n">NearlyIncompressibleMixin</span><span class="p">,</span> <span class="n">NeoHookean</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Neo-Hookean with volumetric penalty.&quot;&quot;&quot;</span>
-
-<span class="n">mat_ni</span> <span class="o">=</span> <span class="n">NH_NI</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="n">E</span><span class="p">,</span> <span class="n">nu</span><span class="o">=</span><span class="mf">0.49</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mi">8</span> <span class="o">*</span> <span class="n">E</span><span class="p">)</span>      <span class="c1"># large bulk modulus</span>
-
-<span class="n">sigma_ni</span> <span class="o">=</span> <span class="n">mat_ni</span><span class="o">.</span><span class="n">stress</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">protocol</span><span class="o">=</span><span class="s2">&quot;uniaxial&quot;</span><span class="p">,</span> <span class="n">stress_type</span><span class="o">=</span><span class="s2">&quot;cauchy&quot;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">/</span> <span class="mf">1e6</span><span class="p">,</span>     <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Compressible (ν = 0.45)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">sigma_ni</span> <span class="o">/</span> <span class="mf">1e6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Nearly incompressible (ν = 0.49)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Stretch λ (–)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;σ (MPa)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</div>
+<div class="tutorial-section docutils container">
+<p class="tutorial-section-title rubric">Step 4: Compare with a Nearly-Incompressible Variant</p>
+<p>Finally, let’s compare the compressible Neo-Hookean material with a nearly-incompressible variant:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span><span class="w"> </span><span class="nn">libela.hyperelastic</span><span class="w"> </span><span class="kn">import</span> <span class="n">NearlyIncompressibleMixin</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="k">class</span><span class="w"> </span><span class="nc">NH_NI</span><span class="p">(</span><span class="n">NearlyIncompressibleMixin</span><span class="p">,</span> <span class="n">NeoHookean</span><span class="p">):</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="sd">&quot;&quot;&quot;Neo-Hookean with volumetric penalty.&quot;&quot;&quot;</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="n">mat_ni</span> <span class="o">=</span> <span class="n">NH_NI</span><span class="p">(</span><span class="n">E</span><span class="o">=</span><span class="n">E</span><span class="p">,</span> <span class="n">nu</span><span class="o">=</span><span class="mf">0.49</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mi">8</span> <span class="o">*</span> <span class="n">E</span><span class="p">)</span>      <span class="c1"># large bulk modulus</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="n">sigma_ni</span> <span class="o">=</span> <span class="n">mat_ni</span><span class="o">.</span><span class="n">stress</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">protocol</span><span class="o">=</span><span class="s2">&quot;uniaxial&quot;</span><span class="p">,</span> <span class="n">stress_type</span><span class="o">=</span><span class="s2">&quot;cauchy&quot;</span><span class="p">)</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="linenos">11</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">/</span> <span class="mf">1e6</span><span class="p">,</span>     <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Compressible (ν = 0.45)&quot;</span><span class="p">)</span>
+<span class="linenos">12</span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">sigma_ni</span> <span class="o">/</span> <span class="mf">1e6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Nearly incompressible (ν = 0.49)&quot;</span><span class="p">)</span>
+<span class="linenos">13</span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Stretch λ (–)&quot;</span><span class="p">)</span>
+<span class="linenos">14</span><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;σ (MPa)&quot;</span><span class="p">)</span>
+<span class="linenos">15</span><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="linenos">16</span><span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">17</span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</section>
-<section id="next-steps">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Next steps</a><a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h2>
+</div>
+<div class="tutorial-section docutils container">
+<p class="tutorial-section-title rubric">Next Steps</p>
 <ul class="simple">
 <li><p>Dive into the mathematical background in
 <a class="reference internal" href="../hyperelastic_materials/hyperelastic.html"><span class="doc">Hyperelasticity Theory &amp; Derivation</span></a>.</p></li>
 </ul>
-</section>
+</div>
 </section>
 
 
@@ -551,7 +548,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Incompressible vs Nearly-Incompressible Hyperelasticity</p>
+        <p class="prev-next-title">Working with Compressibility</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

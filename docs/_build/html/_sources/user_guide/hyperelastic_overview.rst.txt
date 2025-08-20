@@ -1,6 +1,6 @@
 .. _ug_hyperelastic_overview:
 
-Hyperelastic Materials
+Hyperelastic Overview
 ======================
 
 .. contents::
@@ -111,14 +111,6 @@ root-finding utilities, and plotting helpers:
    )
 
    mat.plot(lam_range, sigma, protocol="uniaxial")
-
-Example notebooks
------------------
-
-.. toctree::
-   :maxdepth: 1
-
-   ../../theory/tutorials/hyperelastic_quickstart
 
 Further reading
 ---------------

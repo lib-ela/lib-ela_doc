@@ -33,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=a42ccebe" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=62aa4948" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -55,7 +56,7 @@
     <script src="../_static/js/custom.js?v=7edcf280"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Quick-start Guide" href="getting_started.html" />
+    <link rel="next" title="Quick Start Guide" href="getting_started.html" />
     <link rel="prev" title="Welcome to lib-ela’s documentation!" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -159,7 +160,7 @@
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../theory/index.html">
-    Theory Reference
+    Theory
   </a>
 </li>
 
@@ -204,14 +205,6 @@
 </form>
         </div>
       
-      
-        <div class="navbar-item">
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -296,7 +289,7 @@
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../theory/index.html">
-    Theory Reference
+    Theory
   </a>
 </li>
 
@@ -324,14 +317,6 @@
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item">
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
-        
           <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
         <li class="nav-item">
@@ -358,12 +343,9 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Quick-start Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started_notebook.html">lib-ela: A Notebook Walk-through</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="hyperelastic/overview.html">Hyperelastic Materials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../theory/tutorials/hyperelastic_quickstart.html">Hyperelastic Quick-Start</a></li>
-</ul>
-</details></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_notebook.html">Notebook Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hyperelastic_overview.html">Hyperelastic Overview</a></li>
 </ul>
 </div>
 </nav></div>
@@ -421,38 +403,196 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="user-guide">
-<span id="id1"></span><h1>User Guide<a class="headerlink" href="#user-guide" title="Link to this heading">#</a></h1>
-<p><em>lib‑ela</em> is organised into sub‑packages, each covering a domain of
-solid mechanics. Start with <strong>Getting Started</strong>, then explore the
-specialised guides below.</p>
-<div class="toctree-wrapper compound">
+  <div class="toctree-wrapper compound" id="user-guide">
 </div>
-<section id="getting-started">
-<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
-<p>If this is your first time using <strong>lib‑ela</strong>, follow the quick‑start
-tutorial:</p>
-<p><a class="reference internal" href="getting_started.html"><span class="doc">→ Quick‑start guide</span></a></p>
+<section id="id1">
+<h1>User Guide<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p><em>lib‑ela</em> is your comprehensive toolkit for computational solid mechanics in Python.
+Get started with our interactive tutorials or dive deep into the theory and implementation details.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mt-2 sd-mb-0 sd-ml-2 sd-mr-0 user-guide-grid docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-2 sd-row-cols-lg-3 sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-md sd-card-hover sd-text-left sd-bg-muted sd-rounded-2 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Quick Start</div>
+<p class="sd-card-text">New to <em>lib-ela</em>? Follow our step-by-step guide to run your first simulation in minutes.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="getting_started.html"><span class="doc">Quick Start Guide</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-md sd-card-hover sd-text-left sd-bg-muted sd-rounded-2 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Tutorials</div>
+<p class="sd-card-text">Explore practical examples and learn how to implement various material models.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="../theory/tutorials/index.html"><span class="doc">Tutorials</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-md sd-card-hover sd-text-left sd-bg-muted sd-rounded-2 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+API Reference</div>
+<p class="sd-card-text">Detailed documentation of all classes, methods, and functions in the library.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="../api/index.html"><span class="doc">API Reference</span></a></div>
+</div>
+</div>
+</div>
+<div class="motivation-hero docutils container">
+<p>Programming is now at the heart of modern science and engineering. <em>lib-ela</em> bridges the gap between traditional solid mechanics and modern computational tools, providing an open, extensible platform for research and education.</p>
+</div>
 </section>
-<section id="subpackage-guides">
-<h2>Sub‑package Guides<a class="headerlink" href="#subpackage-guides" title="Link to this heading">#</a></h2>
-<div class="pst-scrollable-table-container"><table class="table">
-<colgroup>
-<col style="width: 20.0%" />
-<col style="width: 80.0%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p><strong>Sub‑package</strong></p></th>
-<th class="head"><p><strong>Description &amp; Guide</strong></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><span class="sd-sphinx-override sd-badge sd-outline-primary sd-text-primary">hyperelastic</span> (<code class="docutils literal notranslate"><span class="pre">libela.hyperelastic</span></code>)</p></td>
-<td><p>Constitutive energy models and stress solvers.  <a class="reference internal" href="hyperelastic/overview.html"><span class="doc">Guide</span></a></p></td>
-</tr>
-</tbody>
-</table>
+<section id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 mb-5 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-column docutils">
+<p><strong>The Python Ecosystem for Solid Mechanics</strong></p>
+<p>Python has emerged as the lingua franca of scientific computing, with a rich ecosystem of tools for numerical analysis, machine learning, and high-performance computing. <em>lib-ela</em> is designed to integrate seamlessly with this ecosystem, from NumPy and SciPy to JAX and PyTorch.</p>
 </div>
+<div class="sd-col sd-d-flex-column docutils">
+<p><strong>Beyond Traditional FEA</strong></p>
+<p>While commercial FEA packages have their place, they often create silos that limit innovation. <em>lib-ela</em> provides direct access to constitutive models, enabling new workflows that combine traditional mechanics with modern data science and machine learning approaches.</p>
+</div>
+</div>
+</div>
+<section id="our-mission">
+<h2>Our Mission<a class="headerlink" href="#our-mission" title="Link to this heading">#</a></h2>
+<p><em>lib-ela</em> was born from a simple idea: <strong>what if every researcher and engineer had easy access to the building blocks of solid mechanics?</strong></p>
+<p>Our goal is to create an open, community-driven library that:</p>
+<ul class="simple">
+<li><p>Provides <span class="highlight">symbolic implementations</span> of constitutive models</p></li>
+<li><p>Enables <span class="highlight">seamless integration</span> with the Python data science stack</p></li>
+<li><p>Supports <span class="highlight">automatic differentiation</span> for gradient-based optimization</p></li>
+<li><p>Facilitates <span class="highlight">reproducible research</span> through open-source development</p></li>
+</ul>
+</section>
+<section id="what-we-re-building">
+<h2>What We’re Building<a class="headerlink" href="#what-we-re-building" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Symbolic models</strong> (via SymPy) for hyperelastic, viscoelastic, and multiphysics materials</p></li>
+<li><p><strong>Automatic derivation</strong> of stresses and tangents (<span class="math notranslate nohighlight">\(\boldsymbol{P} = \frac{\partial W}{\partial \boldsymbol{F}}\)</span>, <span class="math notranslate nohighlight">\(\mathbb{C} = \frac{\partial^2 W}{\partial \boldsymbol{E}^2}\)</span>)</p></li>
+<li><p><strong>Interoperability</strong> with NumPy / JAX / PyTorch for FEA, PINNs, GNNs, and UQ</p></li>
+<li><p><strong>Open, hackable, testable</strong> code paths for research and production</p></li>
+</ul>
+<div class="graphviz"><object data="../_images/graphviz-adaf59e6d0d7205026055af8350c95f1934f2218.svg" type="image/svg+xml" class="graphviz">
+<p class="warning">digraph G {
+  rankdir=LR;
+  node [fontname=&quot;Helvetica,Arial,sans-serif&quot;];
+
+  // Styling
+  graph [bgcolor=&quot;transparent&quot;];
+  node [style=filled, fontsize=12, shape=box, fontname=&quot;Helvetica,Arial,sans-serif&quot;];
+  edge [fontsize=10, arrowsize=0.7];
+
+  // Main nodes with colors
+  node [fillcolor=&quot;#4e79a7&quot;, fontcolor=white, style=&quot;filled,rounded&quot;, color=&quot;#2d5985&quot;, penwidth=1.5];
+  { node [label=&quot;Constitutive Models&quot;, shape=ellipse, fillcolor=&quot;#e15759&quot;, width=2.5, height=1.2] Models; }
+
+  // Sub-models
+  node [fillcolor=&quot;#f28e2b&quot;, width=2.5];
+  &quot;Hyperelastic&quot; &quot;Viscoelastic&quot; &quot;Multiphysics&quot;;
+
+  // Processing steps
+  node [fillcolor=&quot;#59a14f&quot;];
+  &quot;SymPy\nRepresentation&quot;;
+
+  node [fillcolor=&quot;#edc948&quot;];
+  &quot;Auto-diff\n&amp; Codegen&quot;;
+
+  node [fillcolor=&quot;#76b7b2&quot;];
+  &quot;NumPy / JAX\n/ PyTorch&quot;;
+
+  node [fillcolor=&quot;#b07aa1&quot;, shape=ellipse, width=3];
+  &quot;Applications:\nFEA / PINNs / GNNs / UQ&quot;;
+
+  // Connections
+  Models -&gt; { &quot;Hyperelastic&quot; &quot;Viscoelastic&quot; &quot;Multiphysics&quot; } [style=invis];
+  Models -&gt; &quot;SymPy\nRepresentation&quot; [penwidth=2];
+  &quot;SymPy\nRepresentation&quot; -&gt; &quot;Auto-diff\n&amp; Codegen&quot;;
+  &quot;Auto-diff\n&amp; Codegen&quot; -&gt; &quot;NumPy / JAX\n/ PyTorch&quot;;
+  &quot;NumPy / JAX\n/ PyTorch&quot; -&gt; &quot;Applications:\nFEA / PINNs / GNNs / UQ&quot;;
+
+  // Invisible edges for alignment
+  { rank=same; &quot;Hyperelastic&quot; &quot;Viscoelastic&quot; &quot;Multiphysics&quot; }
+  edge [style=invis];
+  &quot;Hyperelastic&quot; -&gt; &quot;Viscoelastic&quot; -&gt; &quot;Multiphysics&quot;;
+}</p></object></div>
+</section>
+<section id="key-features">
+<h2>Key Features<a class="headerlink" href="#key-features" title="Link to this heading">#</a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 mb-5 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-column feature-card docutils">
+<a class="feature-icon reference internal image-reference" href="../_images/api.svg"><img alt="../_images/api.svg" class="feature-icon align-left" src="../_images/api.svg" style="width: 48px;" />
+</a>
+<p><strong>Comprehensive API</strong></p>
+<p>Intuitive Python interface with detailed documentation and type hints for better IDE support.</p>
+</div>
+<div class="sd-col sd-d-flex-column feature-card docutils">
+<a class="feature-icon reference internal image-reference" href="../_images/build.svg"><img alt="../_images/build.svg" class="feature-icon align-left" src="../_images/build.svg" style="width: 48px;" />
+</a>
+<p><strong>Extensible Architecture</strong></p>
+<p>Easily implement custom material models and integrate with existing workflows.</p>
+</div>
+<div class="sd-col sd-d-flex-column feature-card docutils">
+<a class="feature-icon reference internal image-reference" href="../_images/dev.svg"><img alt="../_images/dev.svg" class="feature-icon align-left" src="../_images/dev.svg" style="width: 48px;" />
+</a>
+<p><strong>Modern Tooling</strong></p>
+<p>Built with modern Python features and best practices, including comprehensive testing and CI/CD.</p>
+</div>
+<div class="sd-col sd-d-flex-column feature-card docutils">
+<a class="feature-icon reference internal image-reference" href="../_images/api.svg"><img alt="../_images/api.svg" class="feature-icon align-left" src="../_images/api.svg" style="width: 48px;" />
+</a>
+<p><strong>Performance Optimized</strong></p>
+<p>Leverages NumPy and Numba for high-performance numerical computations.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="solid-mechanics-at-a-glance">
+<h2>Solid mechanics at a glance<a class="headerlink" href="#solid-mechanics-at-a-glance" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\begin{align*}
+\textbf{Kinematics:} \quad
+\boldsymbol{F} &amp;= \frac{\partial \boldsymbol{\varphi}}{\partial \boldsymbol{X}}, &amp;
+J &amp;= \det \boldsymbol{F}, &amp;
+\boldsymbol{C} &amp;= \boldsymbol{F}^\top \boldsymbol{F} \\[1em]
+\textbf{Hyperelastic energy (Neo-Hookean, nearly incompressible):} \quad
+W &amp;= \frac{\mu}{2}\,\left(\bar{I}_1 - 3\right) + \frac{K}{2}\,\left(J - 1\right)^2, &amp;
+\bar{I}_1 &amp;= J^{-2/3}\,\mathrm{tr}(\boldsymbol{C}) \\[1em]
+\textbf{Stresses:} \quad
+\boldsymbol{P} &amp;= \frac{\partial W}{\partial \boldsymbol{F}}, &amp;
+\boldsymbol{\sigma} &amp;= \frac{1}{J}\,\boldsymbol{P}\,\boldsymbol{F}^\top
+\end{align*}</div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <em>nearly incompressible</em> form lets us tune bulk response via <span class="math notranslate nohighlight">\(K\)</span>, while keeping the deviatoric response governed by <span class="math notranslate nohighlight">\(\mu\)</span>. This mirrors how many rubbers, soft tissues, and gels are modeled in practice.</p>
+</div>
+</section>
+<section id="quick-visuals">
+<h2>Quick visuals<a class="headerlink" href="#quick-visuals" title="Link to this heading">#</a></h2>
+<figure class="align-center" id="id2">
+<img alt="../_images/index-1.png" class="plot-directive" src="../_images/index-1.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Uniaxial Cauchy stress</strong> for incompressible Neo-Hookean: <span class="math notranslate nohighlight">\(\sigma(\lambda)=\mu(\lambda^2-\lambda^{-1})\)</span> for several <span class="math notranslate nohighlight">\(\mu\)</span>.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id4">
+<img alt="../_images/index-2.png" class="plot-directive" src="../_images/index-2.png" />
+<figcaption>
+<p><span class="caption-text"><strong>Energy landscape</strong> <span class="math notranslate nohighlight">\(W(\\lambda_1,\\lambda_2)\)</span> for incompressible Neo-Hookean with <span class="math notranslate nohighlight">\(\\lambda_3=(\\lambda_1\\lambda_2)^{-1}\)</span>, <span class="math notranslate nohighlight">\(W=\\tfrac{\\mu}{2}(I_1-3)\)</span>.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="get-involved">
+<h2>Get involved<a class="headerlink" href="#get-involved" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Contribute new models and tests: <a class="reference internal" href="../theory/index.html"><span class="doc">Theory</span></a></p></li>
+<li><p>Help wire up JAX/PyTorch backends: <a class="reference internal" href="../development/contributing.html"><span class="doc">Contributing to lib-ela</span></a></p></li>
+<li><p>Add tutorial notebooks and benchmarks: <a class="reference internal" href="../theory/tutorials/index.html"><span class="doc">Tutorials</span></a></p></li>
+</ul>
 </section>
 </section>
 
@@ -472,7 +612,7 @@ tutorial:</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to lib-ela’s documentation!</p>
+        <p class="prev-next-title">Welcome to <strong>lib-ela</strong>’s documentation!</p>
       </div>
     </a>
     <a class="right-next"
@@ -480,7 +620,7 @@ tutorial:</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Quick-start Guide</p>
+        <p class="prev-next-title">Quick Start Guide</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -1,15 +1,14 @@
 .. _home:
 
-Welcome to lib-ela's documentation!
-===================================
+Welcome to **lib-ela**'s documentation!
+========================================
 
 .. raw:: html
 
    <div class="hero-banner">
      <div class="hero-content">
        <h1></h1>
-       <p>lib-ela is a open source scientific computing library for Solid Mechanics.</p>
-       <p>symbolic modeling of constitutive behavior, deformation protocols, material response, and more...</p>
+       <p>lib-ela is an open source Python library for Solid Mechanics.</p>
      </div>
      
      <div class="quickstart-panel">
@@ -78,6 +77,7 @@ Get Started
 
 .. toctree::
    :maxdepth: 2
+   :caption: Contents:
    :hidden:
 
    user_guide/index
@@ -85,3 +85,4 @@ Get Started
    theory/index
    api/index
    development/index
+   

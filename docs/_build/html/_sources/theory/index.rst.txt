@@ -1,7 +1,10 @@
 .. _theory_index:
 
-Theory Reference
-================
+Theory
+=======
+.. contents::
+   :local:
+   :depth: 2
 
 The *Theory* section gathers background material that underpins **lib-ela**.  
 It blends concise derivations with hands-on code so you can move seamlessly from
@@ -15,6 +18,20 @@ Kinematics, strain-energy functions, stress measures, and consistent tangents
 for large-strain elasticity.
 
 **→ Read the guide:** :doc:`hyperelastic_materials/hyperelastic`
+
+Viscoelasticity
+---------------
+
+Time-dependent material behavior, relaxation functions, and viscoelastic constitutive models for rate-dependent materials.
+
+**→ Read the guide:** :doc:`viscoelastic/viscoelastic`
+
+Multiphysics
+------------
+
+Coupled physical phenomena including thermoelasticity, poroelasticity, and electroelasticity in large deformations.
+
+**→ Read the guide:** :doc:`multiphysics/multiphysics`
 
 Material-Model Catalogue
 ------------------------
@@ -35,9 +52,10 @@ tensor :math:`\mathbf{F}`.
 **→ Browse tests:** :doc:`deformation_protocols`
 
 .. toctree::
-   :hidden:
    :maxdepth: 2
    :titlesonly:
+   :hidden:
+   :caption: Theory
 
    hyperelastic_materials/hyperelastic
    viscoelastic/viscoelastic

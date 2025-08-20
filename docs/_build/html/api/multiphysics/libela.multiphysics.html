@@ -33,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=a42ccebe" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=62aa4948" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -56,7 +57,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="temp_sensitive_hydrogel" href="libela.multiphysics.temp_sensitive_hydrogel.html" />
-    <link rel="prev" title="Prony Series Model" href="../viscoelastic/libela.viscoelastic.prony_series.html" />
+    <link rel="prev" title="prony_series" href="../viscoelastic/libela.viscoelastic.prony_series.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -159,7 +160,7 @@
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../theory/index.html">
-    Theory Reference
+    Theory
   </a>
 </li>
 
@@ -204,14 +205,6 @@
 </form>
         </div>
       
-      
-        <div class="navbar-item">
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -296,7 +289,7 @@
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../../theory/index.html">
-    Theory Reference
+    Theory
   </a>
 </li>
 
@@ -323,14 +316,6 @@
     
     
       <div class="sidebar-header-items__end">
-        
-          <div class="navbar-item">
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -359,16 +344,16 @@
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../hyperelastic/libela.hyperelastic.html">Hyperelastic</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../hyperelastic/libela.hyperelastic.neohookean.html"><code class="docutils literal notranslate"><span class="pre">neohookean</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hyperelastic/libela.hyperelastic.mooneyrivlin.html"><code class="docutils literal notranslate"><span class="pre">mooneyrivlin</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hyperelastic/libela.hyperelastic.klosnersegal.html"><code class="docutils literal notranslate"><span class="pre">klosnersegal</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hyperelastic/libela.hyperelastic.polynomial.html"><code class="docutils literal notranslate"><span class="pre">polynomial</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hyperelastic/libela.hyperelastic.yeoh.html"><code class="docutils literal notranslate"><span class="pre">yeoh</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hyperelastic/libela.hyperelastic.neohookean.html">neohookean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hyperelastic/libela.hyperelastic.mooneyrivlin.html">mooneyrivlin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hyperelastic/libela.hyperelastic.klosnersegal.html">klosnersegal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hyperelastic/libela.hyperelastic.polynomial.html">polynomial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hyperelastic/libela.hyperelastic.yeoh.html">yeoh</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../viscoelastic/libela.viscoelastic.html">Viscoelastic</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../viscoelastic/libela.viscoelastic.maxwell.html">Maxwell Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../viscoelastic/libela.viscoelastic.prony_series.html">Prony Series Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../viscoelastic/libela.viscoelastic.maxwell.html">maxwell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../viscoelastic/libela.viscoelastic.prony_series.html">prony_series</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Multiphysics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -506,7 +491,7 @@
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Prony Series Model</p>
+        <p class="prev-next-title">prony_series</p>
       </div>
     </a>
     <a class="right-next"

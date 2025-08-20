@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Hyperelastic Materials &#8212; lib-ela 1.0.0 documentation</title>
+    <title>Hyperelastic Overview &#8212; lib-ela 1.0.0 documentation</title>
   
   
   
@@ -27,36 +27,37 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=a42ccebe" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=62aa4948" />
   
   <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="../../_static/documentation_options.js?v=8d563738"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../../_static/copybutton.js?v=258bad9d"></script>
-    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=258bad9d"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["\\(", "\\)"]], "processEscapes": true, "macros": {"bm": ["\\boldsymbol{#1}", 1], "dd": ["\\,\\mathrm d"]}}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/hyperelastic/overview';</script>
-    <script src="../../_static/js/custom.js?v=7edcf280"></script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Hyperelastic Quick-Start" href="../../theory/tutorials/hyperelastic_quickstart.html" />
-    <link rel="prev" title="lib-ela: A Notebook Walk-through" href="../getting_started_notebook.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/hyperelastic_overview';</script>
+    <script src="../_static/js/custom.js?v=7edcf280"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tutorials" href="../theory/tutorials/index.html" />
+    <link rel="prev" title="Notebook Demo" href="getting_started_notebook.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -78,7 +79,7 @@
   <dialog id="pst-search-dialog">
     
 <form class="bd-search d-flex align-items-center"
-      action="../../search.html"
+      action="../search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -114,7 +115,7 @@
     
   
 
-<a class="navbar-brand logo" href="../../index.html">
+<a class="navbar-brand logo" href="../index.html">
   
   
   
@@ -125,8 +126,8 @@
       
     
     
-    <img src="../../_static/logo.png" class="logo__image only-light" alt=""/>
-    <img src="../../_static/logo-dark.png" class="logo__image only-dark pst-js-only" alt=""/>
+    <img src="../_static/logo.png" class="logo__image only-light" alt=""/>
+    <img src="../_static/logo-dark.png" class="logo__image only-dark pst-js-only" alt=""/>
   
   
     <p class="title logo__title">lib‑ela</p>
@@ -144,35 +145,35 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item current active">
-  <a class="nav-link nav-internal" href="../index.html">
+  <a class="nav-link nav-internal" href="index.html">
     User Guide
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../theory/tutorials/index.html">
+  <a class="nav-link nav-internal" href="../theory/tutorials/index.html">
     Tutorials
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../theory/index.html">
-    Theory Reference
+  <a class="nav-link nav-internal" href="../theory/index.html">
+    Theory
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../api/index.html">
+  <a class="nav-link nav-internal" href="../api/index.html">
     API Reference
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../development/index.html">
+  <a class="nav-link nav-internal" href="../development/index.html">
     Developer Guide
   </a>
 </li>
@@ -188,7 +189,7 @@
         <div class="navbar-item navbar-persistent--container">
           
 <form class="bd-search d-flex align-items-center"
-      action="../../search.html"
+      action="../search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -204,14 +205,6 @@
 </form>
         </div>
       
-      
-        <div class="navbar-item">
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -236,7 +229,7 @@
   
     <div class="navbar-persistent--mobile">
 <form class="bd-search d-flex align-items-center"
-      action="../../search.html"
+      action="../search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -281,35 +274,35 @@
   <ul class="bd-navbar-elements navbar-nav">
     
 <li class="nav-item current active">
-  <a class="nav-link nav-internal" href="../index.html">
+  <a class="nav-link nav-internal" href="index.html">
     User Guide
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../theory/tutorials/index.html">
+  <a class="nav-link nav-internal" href="../theory/tutorials/index.html">
     Tutorials
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../theory/index.html">
-    Theory Reference
+  <a class="nav-link nav-internal" href="../theory/index.html">
+    Theory
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../api/index.html">
+  <a class="nav-link nav-internal" href="../api/index.html">
     API Reference
   </a>
 </li>
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../development/index.html">
+  <a class="nav-link nav-internal" href="../development/index.html">
     Developer Guide
   </a>
 </li>
@@ -323,14 +316,6 @@
     
     
       <div class="sidebar-header-items__end">
-        
-          <div class="navbar-item">
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -358,12 +343,9 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Quick-start Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../getting_started_notebook.html">lib-ela: A Notebook Walk-through</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Hyperelastic Materials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../theory/tutorials/hyperelastic_quickstart.html">Hyperelastic Quick-Start</a></li>
-</ul>
-</details></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Quick Start Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started_notebook.html">Notebook Demo</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Hyperelastic Overview</a></li>
 </ul>
 </div>
 </nav></div>
@@ -400,14 +382,14 @@
   <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
-      <a href="../../index.html" class="nav-link" aria-label="Home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">User Guide</a></li>
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">User Guide</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Hyperelastic Materials</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Hyperelastic Overview</span></li>
   </ul>
 </nav>
 </div>
@@ -424,8 +406,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="hyperelastic-materials">
-<span id="ug-hyperelastic-overview"></span><h1>Hyperelastic Materials<a class="headerlink" href="#hyperelastic-materials" title="Link to this heading">#</a></h1>
+  <section id="hyperelastic-overview">
+<span id="ug-hyperelastic-overview"></span><h1>Hyperelastic Overview<a class="headerlink" href="#hyperelastic-overview" title="Link to this heading">#</a></h1>
 <nav class="contents local" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#summary" id="id2">Summary</a></p></li>
@@ -433,8 +415,7 @@
 <li><p><a class="reference internal" href="#material-families" id="id4">Material families</a></p></li>
 <li><p><a class="reference internal" href="#mathematical-background" id="id5">Mathematical background</a></p></li>
 <li><p><a class="reference internal" href="#protocols-helpers" id="id6">Protocols &amp; helpers</a></p></li>
-<li><p><a class="reference internal" href="#example-notebooks" id="id7">Example notebooks</a></p></li>
-<li><p><a class="reference internal" href="#further-reading" id="id8">Further reading</a></p></li>
+<li><p><a class="reference internal" href="#further-reading" id="id7">Further reading</a></p></li>
 </ul>
 </nav>
 <section id="summary">
@@ -451,7 +432,7 @@ stresses.  Inspired by <em>FEniCS</em> / <em>SfePy</em> but staying fully <stron
 <li><p>embed them in custom boundary-value problems.</p></li>
 </ul>
 <p>A gentle derivation of these equations is collected in the
-<a class="reference internal" href="../../theory/index.html"><span class="doc">theory reference</span></a>.</p>
+<a class="reference internal" href="../theory/index.html"><span class="doc">theory reference</span></a>.</p>
 </section>
 <section id="quick-start">
 <h2><a class="toc-backref" href="#id3" role="doc-backlink">Quick-start</a><a class="headerlink" href="#quick-start" title="Link to this heading">#</a></h2>
@@ -523,7 +504,7 @@ push-forward</p>
 <p>where <span class="math notranslate nohighlight">\(\mathbf C = \mathbf F^{\mathsf T}\mathbf F\)</span> is the right
 Cauchy–Green tensor and <span class="math notranslate nohighlight">\(J = \det\mathbf F\)</span>.
 A detailed comparison of incompressible versus nearly incompressible
-formulations is given in <a class="reference internal" href="../../theory/hyperelastic_materials/hyperelastic.html"><span class="doc">Hyperelasticity Theory &amp; Derivation</span></a>.</p>
+formulations is given in <a class="reference internal" href="../theory/hyperelastic_materials/hyperelastic.html"><span class="doc">Hyperelasticity Theory &amp; Derivation</span></a>.</p>
 </section>
 <section id="protocols-helpers">
 <h2><a class="toc-backref" href="#id6" role="doc-backlink">Protocols &amp; helpers</a><a class="headerlink" href="#protocols-helpers" title="Link to this heading">#</a></h2>
@@ -541,16 +522,8 @@ root-finding utilities, and plotting helpers:</p>
 </pre></div>
 </div>
 </section>
-<section id="example-notebooks">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">Example notebooks</a><a class="headerlink" href="#example-notebooks" title="Link to this heading">#</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../theory/tutorials/hyperelastic_quickstart.html">Hyperelastic Quick-Start</a></li>
-</ul>
-</div>
-</section>
 <section id="further-reading">
-<h2><a class="toc-backref" href="#id8" role="doc-backlink">Further reading</a><a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">Further reading</a><a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><ol class="upperalpha simple" start="18">
 <li><ol class="upperalpha simple" start="23">
@@ -584,20 +557,20 @@ doi:<a class="reference external" href="https://doi.org/10.1002/9781119176817">1
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../getting_started_notebook.html"
+       href="getting_started_notebook.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">lib-ela: A Notebook Walk-through</p>
+        <p class="prev-next-title">Notebook Demo</p>
       </div>
     </a>
     <a class="right-next"
-       href="../../theory/tutorials/hyperelastic_quickstart.html"
+       href="../theory/tutorials/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Hyperelastic Quick-Start</p>
+        <p class="prev-next-title">Tutorials</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -619,8 +592,8 @@ doi:<a class="reference external" href="https://doi.org/10.1002/9781119176817">1
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">

@@ -33,8 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=a42ccebe" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=62aa4948" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -56,7 +57,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Uniaxial Neo-Hookean Demo" href="hyperelastic_uniaxial_demo.html" />
-    <link rel="prev" title="Hyperelastic Quick-Start" href="hyperelastic_quickstart.html" />
+    <link rel="prev" title="Hyperelastic Overview" href="../../user_guide/hyperelastic_overview.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -159,7 +160,7 @@
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../index.html">
-    Theory Reference
+    Theory
   </a>
 </li>
 
@@ -204,14 +205,6 @@
 </form>
         </div>
       
-      
-        <div class="navbar-item">
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -296,7 +289,7 @@
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../index.html">
-    Theory Reference
+    Theory
   </a>
 </li>
 
@@ -324,14 +317,6 @@
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item">
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
-        
           <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
         <li class="nav-item">
@@ -357,12 +342,11 @@
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+  <div class="bd-toc-item navbar-nav"><ul class="list-caption"><li class="toctree-l0 has-children"><details><summary><p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="hyperelastic_uniaxial_demo.html">Uniaxial Neo-Hookean Demo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hyperelastic_incompressible_vs_nearly.html">Incompressible vs Nearly-Incompressible Hyperelasticity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="hyperelastic_biaxial_inflation.html">Biaxial Inflation: Balloon-Type Loading</a></li>
-</ul>
-</div>
+<li class="toctree-l1"><a class="reference internal" href="hyperelastic_incompressible_vs_nearly.html">Working with Compressibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hyperelastic_biaxial_inflation.html">Biaxial Inflation</a></li>
+</ul></details></li></ul></div>
 </nav></div>
     </div>
   
@@ -425,29 +409,65 @@ Each tutorial focuses on one concrete task and can be executed in any Jupyter
 notebook or plain Python file.</p>
 <div class="toctree-wrapper compound">
 </div>
-<section id="uniaxial-neo-hookean">
-<h2>Uniaxial Neo-Hookean<a class="headerlink" href="#uniaxial-neo-hookean" title="Link to this heading">#</a></h2>
-<p>Instantiate a Neo-Hookean material, compute Cauchy stress under uniaxial
-stretch, and plot the stress–stretch curve.</p>
-<p><strong>→ Run Tutorial 2:</strong> <a class="reference internal" href="hyperelastic_uniaxial_demo.html"><span class="doc">Uniaxial Neo-Hookean Demo</span></a></p>
-</section>
-<section id="incompressible-vs-nearly-incompressible">
-<h2>Incompressible vs Nearly Incompressible<a class="headerlink" href="#incompressible-vs-nearly-incompressible" title="Link to this heading">#</a></h2>
-<p>Covers how <strong>lib-ela</strong> treats compressibility by
-comparing two Neo-Hookean models:</p>
-<p><strong>→ Run Tutorial 3:</strong> <a class="reference internal" href="hyperelastic_incompressible_vs_nearly.html"><span class="doc">Incompressible vs Nearly-Incompressible Hyperelasticity</span></a></p>
-</section>
-<section id="biaxial-inflation">
-<h2>Biaxial Inflation<a class="headerlink" href="#biaxial-inflation" title="Link to this heading">#</a></h2>
-<p>balloon-type loading and pressure–stretch curves</p>
-<p><strong>→ Run Tutorial 4:</strong> <a class="reference internal" href="hyperelastic_biaxial_inflation.html"><span class="doc">Biaxial Inflation: Balloon-Type Loading</span></a></p>
-</section>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 tut-grid docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-2 sd-row-cols-lg-3 sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-md sd-card-hover sd-text-left tut-card docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Uniaxial Neo-Hookean</div>
+<p class="sd-card-text">Learn how to instantiate a Neo-Hookean material, compute Cauchy stress under uniaxial stretch, and plot the stress–stretch curve.</p>
+<p class="sd-card-text"><a class="reference internal" href="hyperelastic_uniaxial_demo.html"><span class="doc">Start tutorial →</span></a></p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="hyperelastic_uniaxial_demo.html"><span class="doc">Uniaxial Neo-Hookean Demo</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-md sd-card-hover sd-text-left tut-card docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Incompressible vs Nearly Incompressible</div>
+<p class="sd-card-text">Compare two Neo-Hookean models to understand how <strong>lib-ela</strong> handles compressibility.</p>
+<p class="sd-card-text"><a class="reference internal" href="hyperelastic_incompressible_vs_nearly.html"><span class="doc">Start tutorial →</span></a></p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="hyperelastic_incompressible_vs_nearly.html"><span class="doc">Working with Compressibility</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-md sd-card-hover sd-text-left tut-card docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Biaxial Inflation</div>
+<p class="sd-card-text">Explore balloon-type loading and analyze pressure–stretch curves for biaxial deformation.</p>
+<p class="sd-card-text"><a class="reference internal" href="hyperelastic_biaxial_inflation.html"><span class="doc">Start tutorial →</span></a></p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="hyperelastic_biaxial_inflation.html"><span class="doc">Biaxial Inflation</span></a></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
 <section id="coming-soon">
-<h2>Coming soon …<a class="headerlink" href="#coming-soon" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>Simple Shear</strong> – shear modulus extraction and off-axis stresses</p></li>
-<li><p><strong>Viscoelastic Creep</strong> – time-dependent compliance using the Generalised-Maxwell model</p></li>
-</ul>
+<h2>Coming Soon<a class="headerlink" href="#coming-soon" title="Link to this heading">#</a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-left tut-card tut-disabled docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Simple Shear</div>
+<p class="sd-card-text">Shear modulus extraction and analysis of off-axis stresses in different material orientations.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-text-left tut-card tut-disabled docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Viscoelastic Creep</div>
+<p class="sd-card-text">Time-dependent compliance analysis using the Generalised-Maxwell model for viscoelastic materials.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -462,12 +482,12 @@ comparing two Neo-Hookean models:</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="hyperelastic_quickstart.html"
+       href="../../user_guide/hyperelastic_overview.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Hyperelastic Quick-Start</p>
+        <p class="prev-next-title">Hyperelastic Overview</p>
       </div>
     </a>
     <a class="right-next"

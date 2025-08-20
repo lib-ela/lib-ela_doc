@@ -3,11 +3,6 @@
 Multiphysics Theory & Derivation
 ================================
 
-.. raw:: html
-
-   <span class="module-path">theory.</span>
-   <div class="api-title">multiphysics</div>
-
 .. contents::
    :local:
    :depth: 1

@@ -49,8 +49,10 @@ extensions: list[str] = [
     # Diagrams
     "sphinx.ext.graphviz",
     "sphinx.ext.inheritance_diagram",
+    "matplotlib.sphinxext.plot_directive",
 ]
 
+graphviz_output_format = "svg" 
 # -----------------------------------------------------------------
 # 4. Templates & exclude patterns
 # -----------------------------------------------------------------
@@ -128,7 +130,7 @@ html_theme_options = {
     },
     "navbar_start": ["navbar-logo"],
     "navbar_center": ["navbar-nav"],
-    "navbar_end": ["theme-switcher", "navbar-icon-links"],
+    "navbar_end": ["navbar-icon-links"],  # Removed theme-switcher
     "navbar_persistent": ["search-field"],
     "show_nav_level": 0,
     # ─── Sidebar ────────────────────────────────────────────────────────────
@@ -138,9 +140,8 @@ html_theme_options = {
     "use_edit_page_button": True,
     # ─── Search ─────────────────────────────────────────────────────────────
     "search_bar_text": "Search the docs…",
-    # ─── Code highlighting ──────────────────────────────────────────────────
-    "pygments_light_style": "tango",
-    "pygments_dark_style": "monokai",
+    # ─── Theme settings ────────────────────────────────────────────────────
+    # Default mode and pygments_style removed as they are not supported in this version
     # ─── Footer ─────────────────────────────────────────────────────────────
     "footer_start": ["copyright"],
     "footer_end": ["sphinx-version"],
@@ -165,3 +166,26 @@ nbsphinx_execute = "never"  # skip notebook execution on CI for speed
 copybutton_prompt_text = ">>> |\\.\\.\\. "  # strip standard Python prompts
 
 
+# -----------------------------------------------------------------
+# 14. Plotting with Matplotlib
+# -----------------------------------------------------------------
+plot_html_show_source_link = False
+plot_html_show_formats = False
+plot_include_source = True         # show the Python that made the plot
+plot_formats = [("png", 160)]      # crisp PNGs; add ("svg", 1) if you want SVG too
+plot_basedir = "plot_directive"    # where the extension caches outputs
+
+# Pre-imports so your .. plot:: blocks can be concise
+plot_pre_code = """
+import numpy as np
+import matplotlib.pyplot as plt
+"""
+
+# A few rcParams for clean docs (tweak as you like)
+plot_rcparams = {
+    "savefig.bbox": "tight",
+    "figure.dpi": 160,
+    "axes.grid": True,
+    "grid.linewidth": 0.3,
+    "axes.titlelocation": "left",
+}

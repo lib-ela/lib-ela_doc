@@ -3,11 +3,6 @@
 Viscoelasticity Theory & Derivation
 ====================================
 
-.. raw:: html
-
-   <span class="module-path">theory.</span>
-   <div class="api-title">viscoelastic</div>
-
 .. contents::
    :local:
    :depth: 1

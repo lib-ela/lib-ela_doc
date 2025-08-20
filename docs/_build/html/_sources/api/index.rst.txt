@@ -64,5 +64,5 @@ See Also
 
 - :doc:`/user_guide/getting_started`
 - :doc:`/theory/material_models`
-- `GitHub Repository <https://github.com/yourorg/yourrepo>`__
-- `Report an Issue <https://github.com/yourorg/yourrepo/issues>`__
+- `GitHub Repository <https://github.com/lib-ela/lib-ela>`__
+- `Report an Issue <https://github.com/lib-ela/lib-ela/pulls>`__

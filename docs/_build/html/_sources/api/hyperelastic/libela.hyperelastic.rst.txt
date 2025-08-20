@@ -14,7 +14,7 @@ Symbolic strain-energy models for hyperelastic materials. Each class defines a s
    This module relies on :mod:`sympy` for symbolic computation and :mod:`numpy` for numerical operations.
    See the `SymPy documentation <https://docs.sympy.org/latest/>`__ and the `NumPy documentation <https://numpy.org/doc/stable/>`__ for more details.
 
-   See :doc:`/theory/material_models` for mathematical background and :doc:`/user_guide/hyperelastic/overview` for usage examples.
+   See :doc:`/theory/material_models` for mathematical background and :doc:`/user_guide/hyperelastic_overview` for usage examples.
 
 Material Models
 ---------------
@@ -115,8 +115,8 @@ See Also
 - :doc:`/theory/material_models`
 - :doc:`/theory/hyperelastic_materials/hyperelastic`
 - :doc:`/theory/deformation_protocols`
-- :doc:`/user_guide/hyperelastic/overview`
-- :doc:`/theory/tutorials/hyperelastic_quickstart` 
+- :doc:`/user_guide/hyperelastic_overview`
+- :doc:`/user_guide/getting_started`
 
 .. toctree::
    :maxdepth: 1

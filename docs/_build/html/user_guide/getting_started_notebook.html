@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>lib-ela: A Notebook Walk-through &#8212; lib-ela 1.0.0 documentation</title>
+    <title>Notebook Demo &#8212; lib-ela 1.0.0 documentation</title>
   
   
   
@@ -33,9 +33,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=a42ccebe" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=62aa4948" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -56,8 +57,8 @@
     <script src="../_static/js/custom.js?v=7edcf280"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Hyperelastic Materials" href="hyperelastic/overview.html" />
-    <link rel="prev" title="Quick-start Guide" href="getting_started.html" />
+    <link rel="next" title="Hyperelastic Overview" href="hyperelastic_overview.html" />
+    <link rel="prev" title="Quick Start Guide" href="getting_started.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -160,7 +161,7 @@
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../theory/index.html">
-    Theory Reference
+    Theory
   </a>
 </li>
 
@@ -205,14 +206,6 @@
 </form>
         </div>
       
-      
-        <div class="navbar-item">
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -297,7 +290,7 @@
 
 <li class="nav-item ">
   <a class="nav-link nav-internal" href="../theory/index.html">
-    Theory Reference
+    Theory
   </a>
 </li>
 
@@ -325,14 +318,6 @@
     
       <div class="sidebar-header-items__end">
         
-          <div class="navbar-item">
-
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
-        
           <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
         <li class="nav-item">
@@ -359,12 +344,9 @@
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Quick-start Guide</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">lib-ela: A Notebook Walk-through</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="hyperelastic/overview.html">Hyperelastic Materials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../theory/tutorials/hyperelastic_quickstart.html">Hyperelastic Quick-Start</a></li>
-</ul>
-</details></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Quick Start Guide</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Notebook Demo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hyperelastic_overview.html">Hyperelastic Overview</a></li>
 </ul>
 </div>
 </nav></div>
@@ -408,7 +390,7 @@
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">User Guide</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">lib-ela: A Notebook Walk-through</span></li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Notebook Demo</span></li>
   </ul>
 </nav>
 </div>
@@ -425,8 +407,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="lib-ela:-A-Notebook-Walk-through">
-<h1>lib-ela: A Notebook Walk-through<a class="headerlink" href="#lib-ela:-A-Notebook-Walk-through" title="Link to this heading">#</a></h1>
+  <section id="Notebook-Demo">
+<h1>Notebook Demo<a class="headerlink" href="#Notebook-Demo" title="Link to this heading">#</a></h1>
 <p>Welcome to <strong>lib-ela</strong>! This notebook will guide you through the basics of symbolic solid mechanics modeling with Python. You’ll learn to install the package, explore available material models, run common deformation protocols, visualise results, and export data.</p>
 <section id="1.-Installation">
 <h2>1. Installation<a class="headerlink" href="#1.-Installation" title="Link to this heading">#</a></h2>
@@ -628,15 +610,15 @@
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Quick-start Guide</p>
+        <p class="prev-next-title">Quick Start Guide</p>
       </div>
     </a>
     <a class="right-next"
-       href="hyperelastic/overview.html"
+       href="hyperelastic_overview.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Hyperelastic Materials</p>
+        <p class="prev-next-title">Hyperelastic Overview</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
