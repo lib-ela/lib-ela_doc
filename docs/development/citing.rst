@@ -1,7 +1,7 @@
 .. _citing:
 
-Citing lib-ela
-==============
+Citing
+=======
 
 If you use *lib-ela* in academic work, please cite the following
 reference so we can track impact and continue development.

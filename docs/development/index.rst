@@ -2,6 +2,9 @@
 
 Developer Guide
 ===============
+.. contents::
+   :local:
+   :depth: 1
 
 Welcome! This part of the documentation is for anyone who
 wants to **contribute code, report bugs, write documentation, or help shape
@@ -11,6 +14,7 @@ lib-ela's future**. Everything you need to get started lives here.
    :maxdepth: 2
    :titlesonly:
    :hidden:
+   :caption: Dev Guide
 
    contributing
    citing

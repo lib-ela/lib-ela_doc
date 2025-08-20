@@ -119,6 +119,13 @@ mathjax3_config = {
 # 9. HTML theme — PyData-Sphinx-Theme
 # -----------------------------------------------------------------
 html_theme = "pydata_sphinx_theme"
+
+# Add version and last_updated to the HTML context
+html_context = {
+    'version': release,
+    'last_updated': datetime.datetime.now().strftime('%Y-%m-%d')
+}
+
 html_logo = "_static/logo.png"
 
 html_theme_options = {

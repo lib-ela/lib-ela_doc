@@ -2,13 +2,16 @@
 
 Developer Guide
 ===============
+.. contents::
+   :local:
+   :depth: 2
 
 Welcome! This part of the documentation is for anyone who
 wants to **contribute code, report bugs, write documentation, or help shape
 lib-ela's future**. Everything you need to get started lives here.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :titlesonly:
    :hidden:
 

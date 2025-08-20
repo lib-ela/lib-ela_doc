@@ -5,17 +5,29 @@ Welcome to **lib-ela**'s documentation!
 
 .. raw:: html
 
-   <div class="hero-banner">
-     <div class="hero-content">
-       <h1></h1>
-       <p>lib-ela is an open source Python library for Solid Mechanics.</p>
+   <section class="hero-banner" role="banner" aria-label="lib-ela hero">
+     <div class="hero-bg" aria-hidden="true"></div>
+
+     <div class="hero-inner">
+       <p class="hero-eyebrow">Open-source • Python • Solid Mechanics</p>
+       <h2 class="hero-title">Build symbolic solid mechanics in Python</h2>
+       <p class="hero-tagline">
+         Hyperelastic, viscoelastic, and multiphysics models with ready-to-run examples.
+       </p>
+
+       <div class="hero-ctas">
+         <a href="user_guide/getting_started.html" class="btn btn-primary"
+            aria-label="Open the quick-start guide">Quick-start guide</a>
+         <a href="api/index.html" class="btn btn-primary" aria-label="Browse API reference">Browse API</a>
+       </div>
+
+       <div class="hero-ctas">
+         <a class="btn btn-primary"><code>pip install lib-ela</code></a>
+       </div>
+       
+       <div class="hero-meta">v1.0.0 · Updated 2025-08-20</div>
      </div>
-     
-     <div class="quickstart-panel">
-       <p>New to lib-ela? Begin with the step-by-step tutorial and your first stress–strain plot.</p>
-       <a href="user_guide/getting_started.html" class="quickstart-btn">Open the quick-start guide →</a>
-     </div>
-   </div>
+   </section>
 
 Get Started
 -----------

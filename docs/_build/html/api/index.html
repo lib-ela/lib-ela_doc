@@ -33,9 +33,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=fd3f3429" />
-    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css?v=7f9a90b1" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=62aa4948" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=1736ecc3" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -60,7 +60,8 @@
     <link rel="prev" title="Deformation Protocols" href="../theory/deformation_protocols.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
+  <meta name="docsearch:version" content="1.0.0" />
+    <meta name="docbuild:last-update" content="2025-08-20"/>
   </head>
   
   
@@ -432,11 +433,13 @@
 <nav class="contents local" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#package-index" id="id2">Package Index</a></p></li>
-<li><p><a class="reference internal" href="#quick-example" id="id3">Quick Example</a></p></li>
-<li><p><a class="reference internal" href="#see-also" id="id4">See Also</a></p></li>
+<li><p><a class="reference internal" href="#conventions-types" id="id3">Conventions &amp; Types</a></p></li>
+<li><p><a class="reference internal" href="#deformation-protocols" id="id4">Deformation Protocols</a></p></li>
+<li><p><a class="reference internal" href="#quick-example" id="id5">Quick Example</a></p></li>
+<li><p><a class="reference internal" href="#see-also" id="id6">See Also</a></p></li>
 </ul>
 </nav>
-<p>This section is your go-to for the core modules in libela. Each link below opens the
+<p>This section is your go-to for the core modules in <em>lib-ela</em>. Each link below opens the
 full, module‑level API page, including classes, functions, and constants.</p>
 <div class="toctree-wrapper compound">
 </div>
@@ -479,16 +482,84 @@ full, module‑level API page, including classes, functions, and constants.</p>
 </table>
 </div>
 </section>
+<section id="conventions-types">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Conventions &amp; Types</a><a class="headerlink" href="#conventions-types" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 26.0%" />
+<col style="width: 74.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Symbol / arg</p></th>
+<th class="head"><p>Type &amp; meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">lam</span></code></p></td>
+<td><p>float or 1D array of stretches <span class="math notranslate nohighlight">\(\lambda\)</span> (uniaxial protocols).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">F</span></code></p></td>
+<td><p>2×2 or 3×3 deformation gradient (NumPy array), protocol-dependent.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">params</span></code></p></td>
+<td><p>Material parameters, e.g. <code class="docutils literal notranslate"><span class="pre">[mu,</span> <span class="pre">K]</span></code> for nearly-incompressible models.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">stress_type</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'cauchy'</span></code> | <code class="docutils literal notranslate"><span class="pre">'PK1'</span></code> | <code class="docutils literal notranslate"><span class="pre">'PK2'</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">protocol</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'uniaxial'</span></code>, <code class="docutils literal notranslate"><span class="pre">'biaxial'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'simple_shear'</span></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="deformation-protocols">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Deformation Protocols</a><a class="headerlink" href="#deformation-protocols" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Protocol</p></th>
+<th class="head"><p>Solver entry point</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Uniaxial</p></td>
+<td><p><code class="xref py py-func docutils literal notranslate"><span class="pre">libela.operations.uniaxial_solver()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Biaxial</p></td>
+<td><p><code class="xref py py-func docutils literal notranslate"><span class="pre">libela.operations.biaxial_solver()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Simple shear</p></td>
+<td><p><code class="xref py py-func docutils literal notranslate"><span class="pre">libela.operations.simple_shear_solver()</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 <section id="quick-example">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Quick Example</a><a class="headerlink" href="#quick-example" title="Link to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">libela.hyperelastic</span><span class="w"> </span><span class="kn">import</span> <span class="n">neohookean</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">neohookean</span><span class="p">(</span><span class="n">mu</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">lam</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
-<span class="n">stress</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">stress</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Quick Example</a><a class="headerlink" href="#quick-example" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">libela.hyperelastic</span><span class="w"> </span><span class="kn">import</span> <span class="n">hyperelastic</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">hyperelastic</span><span class="o">.</span><span class="n">neohookean</span><span class="p">(</span><span class="n">compressible</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">mu</span><span class="p">,</span> <span class="n">K</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">100.0</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">stress</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">[</span><span class="n">mu</span><span class="p">,</span> <span class="n">K</span><span class="p">],</span> <span class="n">protocol</span><span class="o">=</span><span class="s1">&#39;uniaxial&#39;</span><span class="p">,</span> <span class="n">stress_type</span><span class="o">=</span><span class="s1">&#39;cauchy&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\lambda$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Cauchy stress&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Neo-Hookean: uniaxial&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="see-also">
-<h2><a class="toc-backref" href="#id4" role="doc-backlink">See Also</a><a class="headerlink" href="#see-also" title="Link to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">See Also</a><a class="headerlink" href="#see-also" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../user_guide/getting_started.html"><span class="doc">Quick Start Guide</span></a></p></li>
 <li><p><a class="reference internal" href="../theory/material_models.html"><span class="doc">Material Model Catalogue</span></a></p></li>

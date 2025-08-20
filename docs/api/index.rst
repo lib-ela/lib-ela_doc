@@ -48,20 +48,6 @@ Package Index
      - ``libela.fitting``
      - Plotting and Fitting utils
 
-Package Overview
-----------------
-
-.. graphviz::
-
-   digraph G {
-     rankdir=LR;
-     node [shape=box, style=rounded];
-     hyperelastic -> operations;
-     viscoelastic -> operations;
-     multiphysics -> operations;
-     fitting -> {hyperelastic viscoelastic operations};
-   }
-
 Conventions & Types
 -------------------
 
@@ -101,9 +87,7 @@ Deformation Protocols
 Quick Example
 -------------
 
-.. plot::
-   :context: reset
-   :include-source: True
+.. code-block:: python
 
    import numpy as np
    import matplotlib.pyplot as plt

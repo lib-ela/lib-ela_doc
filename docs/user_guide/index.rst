@@ -8,7 +8,8 @@
 
 .. toctree::
    :hidden:
-   :maxdepth: 1
+   :maxdepth: 2
+   :caption: User Guide
    
    getting_started
    getting_started_notebook
