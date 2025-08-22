@@ -16,7 +16,7 @@ Welcome to **lib-ela**'s documentation!
        </p>
 
        <div class="hero-ctas">
-         <a href="user_guide/getting_started.html" class="btn btn-primary"
+         <a href="user_guide/index.html" class="btn btn-primary"
             aria-label="Open the quick-start guide">Quick-start guide</a>
          <a href="api/index.html" class="btn btn-primary" aria-label="Browse API reference">Browse API</a>
        </div>

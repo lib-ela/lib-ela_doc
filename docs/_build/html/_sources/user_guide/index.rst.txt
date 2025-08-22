@@ -69,14 +69,15 @@ Introduction
    .. grid-item::
       
       **The Python Ecosystem for Solid Mechanics**
-      
-      Python has emerged as the lingua franca of scientific computing, with a rich ecosystem of tools for numerical analysis, machine learning, and high-performance computing. *lib-ela* is designed to integrate seamlessly with this ecosystem, from NumPy and SciPy to JAX and PyTorch.
-   
+
+      Python stands out for its versatility and its growing ecosystem of open-source tools for scientific computing, machine learning, numerical analysis, and high-performance computing. *lib-ela* is designed to integrate seamlessly with this ecosystem, from NumPy and SciPy to JAX and PyTorch.
+
    .. grid-item::
       
       **Beyond Traditional FEA**
       
-      While commercial FEA packages have their place, they often create silos that limit innovation. *lib-ela* provides direct access to constitutive models, enabling new workflows that combine traditional mechanics with modern data science and machine learning approaches.
+      While commercial FEAsoftware like ABAQUS, ANSYS, and COMSOL have their place they often restrict model usage to within their own environments, making it difficult to connect them with the broader ecosystem of open-source tools in Python.
+
 
 Our Mission
 -----------
@@ -262,7 +263,7 @@ Quick visuals
 .. plot::
    :context: close-figs
    :include-source: false
-   :caption: **Energy landscape** :math:`W(\\lambda_1,\\lambda_2)` for incompressible Neo-Hookean with :math:`\\lambda_3=(\\lambda_1\\lambda_2)^{-1}`, :math:`W=\\tfrac{\\mu}{2}(I_1-3)`.
+   :caption: **Energy landscape** :math:`W(\lambda_1,\lambda_2)` for incompressible Neo-Hookean with :math:`\lambda_3=\frac{1}{\lambda_1\lambda_2}`, :math:`W=\frac{\mu}{2}(I_1-3)`.
    :align: center
 
    from mpl_toolkits.mplot3d import Axes3D

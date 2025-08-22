@@ -61,7 +61,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="1.0.0" />
-    <meta name="docbuild:last-update" content="2025-08-20"/>
+    <meta name="docbuild:last-update" content="2025-08-22"/>
   </head>
   
   
@@ -450,11 +450,11 @@ API Reference</div>
 <div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
 <div class="sd-col sd-d-flex-column docutils">
 <p><strong>The Python Ecosystem for Solid Mechanics</strong></p>
-<p>Python has emerged as the lingua franca of scientific computing, with a rich ecosystem of tools for numerical analysis, machine learning, and high-performance computing. <em>lib-ela</em> is designed to integrate seamlessly with this ecosystem, from NumPy and SciPy to JAX and PyTorch.</p>
+<p>Python stands out for its versatility and its growing ecosystem of open-source tools for scientific computing, machine learning, numerical analysis, and high-performance computing. <em>lib-ela</em> is designed to integrate seamlessly with this ecosystem, from NumPy and SciPy to JAX and PyTorch.</p>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
 <p><strong>Beyond Traditional FEA</strong></p>
-<p>While commercial FEA packages have their place, they often create silos that limit innovation. <em>lib-ela</em> provides direct access to constitutive models, enabling new workflows that combine traditional mechanics with modern data science and machine learning approaches.</p>
+<p>While commercial FEAsoftware like ABAQUS, ANSYS, and COMSOL have their place they often restrict model usage to within their own environments, making it difficult to connect them with the broader ecosystem of open-source tools in Python.</p>
 </div>
 </div>
 </div>
@@ -582,7 +582,7 @@ W &amp;= \frac{\mu}{2}\,\left(\bar{I}_1 - 3\right) + \frac{K}{2}\,\left(J - 1\ri
 <figure class="align-center" id="id4">
 <img alt="../_images/index-2.png" class="plot-directive" src="../_images/index-2.png" />
 <figcaption>
-<p><span class="caption-text"><strong>Energy landscape</strong> <span class="math notranslate nohighlight">\(W(\\lambda_1,\\lambda_2)\)</span> for incompressible Neo-Hookean with <span class="math notranslate nohighlight">\(\\lambda_3=(\\lambda_1\\lambda_2)^{-1}\)</span>, <span class="math notranslate nohighlight">\(W=\\tfrac{\\mu}{2}(I_1-3)\)</span>.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+<p><span class="caption-text"><strong>Energy landscape</strong> <span class="math notranslate nohighlight">\(W(\lambda_1,\lambda_2)\)</span> for incompressible Neo-Hookean with <span class="math notranslate nohighlight">\(\lambda_3=\frac{1}{\lambda_1\lambda_2}\)</span>, <span class="math notranslate nohighlight">\(W=\frac{\mu}{2}(I_1-3)\)</span>.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -590,7 +590,7 @@ W &amp;= \frac{\mu}{2}\,\left(\bar{I}_1 - 3\right) + \frac{K}{2}\,\left(J - 1\ri
 <h2>Get involved<a class="headerlink" href="#get-involved" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Contribute new models and tests: <a class="reference internal" href="../theory/index.html"><span class="doc">Theory</span></a></p></li>
-<li><p>Help wire up JAX/PyTorch backends: <a class="reference internal" href="../development/contributing.html"><span class="doc">Contributing to lib-ela</span></a></p></li>
+<li><p>Help wire up JAX/PyTorch backends: <a class="reference internal" href="../development/contributing.html"><span class="doc">Contributing</span></a></p></li>
 <li><p>Add tutorial notebooks and benchmarks: <a class="reference internal" href="../theory/tutorials/index.html"><span class="doc">Tutorials</span></a></p></li>
 </ul>
 </section>
